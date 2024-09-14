@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import  plugin  from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -8,12 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({addBase, theme}){
+      addBase({
+        ".layout-sm": {
+          "grid-template-columns": `1fr min(${theme("screens.sm")},100%) 1fr`,
+        },
+        ".layout-xl": {
+          "grid-template-columns": `1fr minmax(auto,${theme("spacing.60")}) min(${theme("screens.sm")},100%) minmax(auto,${theme("spacing.60")}) 1fr`,
+        },
+      })
+    })
+  ],
 };
 export default config;
