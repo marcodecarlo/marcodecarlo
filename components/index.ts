@@ -1,0 +1,1 @@
+export { default as BackgroundFilter } from "./svg/BackgroundFilter";
