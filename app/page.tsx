@@ -3,7 +3,7 @@ import { ProfileImage } from "@/components"
 
 export default function Home() {
   return (
-    <div className="rounded-2xl bg-white/5 p-4 md:p-7 shadow-lg  shadow-green-800/50">
+    <div className="rounded-2xl bg-white/5 p-4 md:p-7 shadow-lg  shadow-green-800/50 animate-grow">
        <div className="flex flex-wrap items-center">
         
         <ProfileImage/>
