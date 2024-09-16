@@ -16,7 +16,6 @@ const Post = defineDocumentType(() => ({
       type: "json",
       resolve: async (doc) => {
         const regXHeader = /\n\n(?<flag>#{1,6})\s+(?<content>.+)/g;
-        console.log("headings doc.body ",doc)
         const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
           (match) => {
             const groups = (match as RegExpMatchArray).groups;
@@ -30,7 +29,6 @@ const Post = defineDocumentType(() => ({
             }
           },
         );
-        console.log("headings return ",headings)
         return headings
       },
     },

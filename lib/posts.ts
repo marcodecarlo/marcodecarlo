@@ -16,3 +16,26 @@ export const formatPostPreview = (post: Post) => {
       description: partialPost.description ?? null,
     }
   }
+
+  export const formatPost = (
+    {
+      title,
+      slug,
+      publishedAtFormatted,
+      description,
+      body,
+      headings,
+    }: Post,
+  ) => ({
+    title,
+    slug,
+    publishedAtFormatted,
+    description: description ?? null,
+    body: {
+      code: body.code,
+    },
+    headings:
+      (headings as { heading: number; text: string; slug: string }[]) ?? null,
+  })
+  
+  export type FormattedPost = ReturnType<typeof formatPost>
