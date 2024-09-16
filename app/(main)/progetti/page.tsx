@@ -1,7 +1,7 @@
 import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { formatPostPreview } from "@/lib";
-import { ProjectPreview } from "@/components";
+import { PostPreview } from "@/components";
 
 export default async function Page() {
   const posts = await allPosts
@@ -19,7 +19,7 @@ export default async function Page() {
   return (
     <div className="mt-8 space-y-10">
       {posts.map((post) => {
-        return <ProjectPreview key={post.slug} {...post} />;
+        return <PostPreview key={post.slug} {...post} />;
       })}
     </div>
   );

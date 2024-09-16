@@ -1,7 +1,7 @@
 import { formatPostPreview } from "@/lib";
 import { ContentLink } from "@/components";
 
-export default function ProjectPreview(
+export default function PostPreview(
   post: ReturnType<typeof formatPostPreview>
 ) {
   return (

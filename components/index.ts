@@ -7,7 +7,7 @@ export { ContentLink } from "./common/ContentLink";
 export { default as Header } from "./layout/Header";
 
 // Project
-export { default as ProjectPreview } from "./project/ProjectPreview";
+export { default as PostPreview } from "./project/PostPreview";
 
 // SVG
 export { default as BackgroundFilter } from "./svg/BackgroundFilter";
