@@ -1,12 +1,26 @@
 import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
+import { formatPostPreview } from "@/lib";
+import { ProjectPreview } from "@/components";
 
 export default async function Page() {
-  const post = allPosts.filter((p) => p.status === "published");
+  const posts = await allPosts
+    .filter((p) => p.status === "published")
+    .map(formatPostPreview)
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    );
 
-  if (!post) {
+  if (!posts) {
     notFound();
   }
 
-  return <div>{JSON.stringify(post)}</div>;
+  return (
+    <div className="mt-8 space-y-10">
+      {posts.map((post) => {
+        return <ProjectPreview key={post.slug} {...post} />;
+      })}
+    </div>
+  );
 }
