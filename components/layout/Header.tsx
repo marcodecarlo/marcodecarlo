@@ -9,8 +9,8 @@ export default function Header({ sticky }: HeaderProps) {
     <div
       className={`flex items-center ${
         sticky
-          ? "rounded-2xl backdrop-blur bg-white/5 p-2 shadow-lg shadow-green-800/50 animate-grow"
-          : "flex-wrap"
+          ? "rounded-2xl backdrop-blur-sm bg-green-100/2 p-2 shadow-md shadow-green-800/50 animate-grow"
+          : "flex-wrap shadow-lg"
       }`}
     >
       <ProfileImage size={sticky ? "small" : "large"} />
