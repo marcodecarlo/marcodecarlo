@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex flex-wrap items-center">
         <ProfileImage />
 
-        <div className="mx-3 flex-1 sm:mx-6">
+        <div className="mx-3 flex-1 sm:mx-6 min-w-72">
           <h1 className="text-4xl font-semibold leading-none text-green-100">
             Marco De Carlo
           </h1>

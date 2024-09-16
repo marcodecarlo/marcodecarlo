@@ -7,3 +7,4 @@ export { default as BackgroundFilter } from "./svg/BackgroundFilter";
 export { default as Light } from "./svg/Light";
 export { default as Phone } from "./svg/Phone";
 export { default as Email } from "./svg/Email";
+export { default as Linkedin } from "./svg/Linkedin";

@@ -1,4 +1,4 @@
-import { Email, Light } from "@/components";
+import { Email, Light, Linkedin } from "@/components";
 import { ElementType, ReactNode } from "react";
 import Link from "next/link";
 
@@ -33,6 +33,12 @@ export default function Nav() {
       </NavItem>
       <NavItem href="mailto:marcodecarlo.developer@gmail.com" Icon={Email}>
         Contattami
+      </NavItem>
+      <NavItem
+        href="https://www.linkedin.com/in/marco-de-carlo/"
+        Icon={Linkedin}
+      >
+        Linkedin
       </NavItem>
     </div>
   );
