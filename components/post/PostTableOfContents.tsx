@@ -7,9 +7,7 @@ const PostTableOfContents = ({
 }) => {
   return (
     <div>
-      <div className="mb-2.5 text-xs uppercase text-green-200/30">
-        On this page
-      </div>
+      <div className="mb-2.5 text-xs uppercase text-green-200/30">Indice</div>
 
       <ul className="space-y-2.5 text-sm">
         {headings.map((heading) => {
