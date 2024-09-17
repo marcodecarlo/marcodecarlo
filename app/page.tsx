@@ -22,7 +22,7 @@ export default function Home() {
         </p>
         <p>
           {`Inizialmente mi sono approcciato al mondo del Frontend e all'uso di
-            programmi come Photoshop, Illustrator e After Effects. Con il tempo,
+            programmi di grafica come Photoshop, Illustrator e After Effects. Con il tempo,
             ho ampliato le mie conoscenze anche ai linguaggi di Backend,
             permettendomi di creare E-Commerce, Blog e Siti Web per clienti in
             cerca di consulenza.`}
