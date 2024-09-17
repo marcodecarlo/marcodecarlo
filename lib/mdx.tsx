@@ -27,7 +27,7 @@ export const components = {
   ),
   h2: (props: any) => (
     <h3
-      className="relative mt-3 border-t-2 border-rose-200/5 pt-9 text-xl font-medium text-green-200/95 sm:text-2xl"
+      className="relative mt-3 border-t-2 border-green-200/5 pt-9 text-xl font-medium text-green-200/95 sm:text-2xl"
       {...props}
     />
   ),

@@ -38,7 +38,7 @@ export default function Post({ post }: { post: FormattedPost }) {
           {post.headings ? (
             <>
               <PostTableOfContents headings={post.headings} />
-              <div className="border-t-2 border-rose-200/5"></div>
+              <div className="border-t-2 border-green-200/5"></div>
             </>
           ) : null}
 

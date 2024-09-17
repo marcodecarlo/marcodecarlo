@@ -23,7 +23,7 @@ type Props = {
 const Filesystem = ({ items, size = "medium", withCounters }: Props) => {
   return (
     <div
-      className={`valkyrie backdrop-blur-mdx divide-y divide-rose-100/5 rounded-lg font-medium shadow-xl shadow-black/5 ${
+      className={`valkyrie backdrop-blur-mdx divide-y divide-green-100/5 rounded-lg font-medium shadow-xl shadow-black/5 ${
         withCounters ? "[counter-reset:highlight]" : ""
       }`}
     >
@@ -47,22 +47,22 @@ const Node = ({ items, lvl, size, withCounters }: Props & { lvl: number }) => {
                   : ""
               } ${
                 status === "highlighted"
-                  ? "rounded-lg border-none bg-blue-700/[15%] ring-2 ring-blue-700/80"
+                  ? "rounded-lg border-none bg-yellow-700/[15%] ring-2 ring-yellow-700/80"
                   : ""
               } ${
                 status === "highlighted" && withCounters === true
-                  ? "relative before:absolute before:-top-0.5 before:-left-6 before:flex before:h-4 before:w-4 before:items-center before:justify-center before:rounded-full before:bg-blue-700 before:text-xs before:font-semibold before:text-blue-100/90 before:![content:counter(highlight)] before:[counter-increment:highlight]"
+                  ? "relative before:absolute before:-top-0.5 before:-left-6 before:flex before:h-4 before:w-4 before:items-center before:justify-center before:rounded-full before:bg-yellow-700 before:text-xs before:font-semibold before:text-yellow-100/90 before:![content:counter(highlight)] before:[counter-increment:highlight]"
                   : ""
               }`}
             >
               <div
                 className={`${
                   !status
-                    ? "text-rose-100/30"
+                    ? "text-green-100/30"
                     : status === "highlighted"
-                    ? "text-blue-100/30"
+                    ? "text-yellow-100/30"
                     : status === "faded"
-                    ? "text-rose-100/10"
+                    ? "text-green-100/10"
                     : ""
                 } ${
                   lvl === 1
@@ -85,11 +85,11 @@ const Node = ({ items, lvl, size, withCounters }: Props & { lvl: number }) => {
               <div
                 className={`truncate ${size === "small" ? "text-sm" : ""} ${
                   !status
-                    ? "text-rose-100/70"
+                    ? "text-green-100/70"
                     : status === "highlighted"
-                    ? "text-blue-100/70"
+                    ? "text-yellow-100/70"
                     : status === "faded"
-                    ? "text-rose-100/30"
+                    ? "text-green-100/30"
                     : ""
                 }`}
               >
