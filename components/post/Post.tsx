@@ -43,12 +43,13 @@ export default function Post({ post }: { post: FormattedPost }) {
           ) : null}
 
           <div className="flex items-center justify-between">
-            <ScrollToTop>Torna all'inizio</ScrollToTop>
+            <ScrollToTop>{`Torna all'inizio`}</ScrollToTop>
           </div>
         </div>
       </div>
 
       <MDXContent components={components} />
+      <div className="mb-8"></div>
     </>
   );
 }
