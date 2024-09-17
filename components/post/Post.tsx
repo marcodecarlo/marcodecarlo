@@ -10,14 +10,17 @@ export default function Post({ post }: { post: FormattedPost }) {
   return (
     <>
       <div className="mt-24 mb-4 xl:!col-end-5">
-        <Link href="/" className="group inline-flex items-center space-x-2">
+        <Link
+          href="/progetti"
+          className="group inline-flex items-center space-x-2"
+        >
           <div className="transition rounded-full bg-green-200/10 p-1 text-green-200/80 group-hover:bg-green-200/25 group-hover:text-green-200">
             <div className="w-4 group-hover:scale-125 transition-transform group-active:scale-110">
               <Left />
             </div>
           </div>
           <div className="mt-0.5 text-green-200/70 group-hover:text-green-200/90 transition">
-            All Posts
+            Tutti Progetti
           </div>
         </Link>
 
@@ -40,7 +43,7 @@ export default function Post({ post }: { post: FormattedPost }) {
           ) : null}
 
           <div className="flex items-center justify-between">
-            <ScrollToTop>Back to top</ScrollToTop>
+            <ScrollToTop>Torna all'inizio</ScrollToTop>
           </div>
         </div>
       </div>
