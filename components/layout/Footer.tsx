@@ -39,7 +39,7 @@ const Footer = () => {
         <NavFooter />
 
         <Link href="mailto:marcodecarlo.developer@gmail.com" target="_blank">
-          <Marcodecarlo />
+          <Marcodecarlo enablePowered={true} />
         </Link>
       </div>
     </footer>
