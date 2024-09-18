@@ -1,6 +1,6 @@
 "use client";
 
-import { Header, Marcodecarlo } from "@/components";
+import { Header } from "@/components";
 import { useEffect } from "react";
 
 export default function Error({

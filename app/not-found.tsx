@@ -1,23 +1,10 @@
-"use client";
+import { Header } from "@/components";
 
-import { Header, Marcodecarlo } from "@/components";
-import { useEffect } from "react";
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
+export default function NotFound() {
   return (
     <div className="rounded-2xl bg-white/5 p-4 md:p-7">
       <Header sticky={false} />
-      <p className="text-center text-2xl">Qualcosa è andato storto!</p>
+      <p className="text-center text-2xl">Non ho trovato nulla!</p>
 
       <div className="text-center mt-6">
         <a
