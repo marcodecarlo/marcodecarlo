@@ -14,9 +14,10 @@
     }
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.12",
     "contentlayer": "^0.3.4",
     "date-fns": "^4.0.0",
-    "next": "14.2.8",
+    "next": "^14.2.12",
     "next-contentlayer": "^0.3.4",
     "react": "^18",
     "react-dom": "^18"
