@@ -1,9 +1,9 @@
-import { Email, Light, Linkedin } from "@/components";
+import { Email, GithubIcon, Light, Linkedin } from "@/components";
 import { ElementType, ReactNode } from "react";
 import Link from "next/link";
 
 interface NavItemProps {
-  children: ReactNode;
+  children?: ReactNode;
   href: string;
   targetBlank?: boolean;
   className?: string;
@@ -41,7 +41,7 @@ interface NavProps {
   sticky: boolean;
 }
 
-export default function Nav({ sticky }: NavProps) {
+const Nav = ({ sticky }: NavProps) => {
   const linkStyle = sticky ? "mr-3" : "mr-3 mt-3";
 
   return (
@@ -70,4 +70,28 @@ export default function Nav({ sticky }: NavProps) {
       </NavItem>
     </div>
   );
-}
+};
+
+const NavFooter = () => {
+  return (
+    <div
+      className={`flex items-center text-base font-medium leading-none text-green-100/80 space-x-6 flex-wrap`}
+    >
+      <NavItem
+        href="https://www.linkedin.com/in/marco-de-carlo/"
+        targetBlank
+        Icon={Linkedin}
+      />
+
+      <NavItem
+        href="https://github.com/marcodecarlo"
+        targetBlank
+        Icon={GithubIcon}
+      />
+
+      <NavItem href="mailto:marcodecarlo.developer@gmail.com" Icon={Email} />
+    </div>
+  );
+};
+
+export { Nav, NavFooter };

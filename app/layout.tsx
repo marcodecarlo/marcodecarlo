@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 
 import "@/styles/globals.css";
-import { BackgroundFilter } from "@/components";
+import { BackgroundFilter, Footer } from "@/components";
 
 export const metadata: Metadata = {
   title: "Marco De Carlo",
@@ -29,6 +29,8 @@ export default function RootLayout({
         <BackgroundFilter />
         <div className="layout-sm relative z-10 grid gap-y-8 px-4 pt-12 text-green-100/90 xl:layout-xl xl:gap-x-9 xl:px-0 [&>*]:col-start-2 xl:[&>*]:col-start-3">
           {children}
+
+          <Footer />
         </div>
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="h-full bg-[url('https://res.cloudinary.com/graziadecarlo/image/upload/v1726317965/bg_gradient.png')] bg-top bg-no-repeat opacity-[0.8]"></div>
