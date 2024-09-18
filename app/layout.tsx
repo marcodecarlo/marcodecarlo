@@ -3,15 +3,13 @@ import { Exo_2 } from "next/font/google";
 
 import "@/styles/globals.css";
 import { BackgroundFilter, Footer } from "@/components";
+import { myMeta } from "@/lib";
 
-export const metadata: Metadata = {
-  title: "Marco De Carlo",
-  description: "Web Developer",
-};
+export const metadata: Metadata = myMeta;
 
 const exo = Exo_2({
   subsets: ["latin"],
-  weight: ["300", "600"],
+  weight: ["300", "400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-exo",
 });

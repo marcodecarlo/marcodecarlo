@@ -1,11 +1,5 @@
 import { FOCUS_VISIBLE_OUTLINE, LINK_SUBTLE_STYLES } from "@/lib";
-import {
-  Email,
-  GithubIcon,
-  Linkedin,
-  Marcodecarlo,
-  NavFooter,
-} from "@/components";
+import { Marcodecarlo, NavFooter } from "@/components";
 import Link from "next/link";
 
 const Footer = () => {
