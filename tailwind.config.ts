@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 import  plugin  from "tailwindcss/plugin";
+import  defaultTheme  from "tailwindcss/defaultTheme";
+
 
 const config: Config = {
   content: [
@@ -9,6 +11,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-exo)", ...defaultTheme.fontFamily.sans],
+      },
       keyframes: {
         grow: {
           '0%': { transform: 'scale(0.5)', opacity: '0' },
