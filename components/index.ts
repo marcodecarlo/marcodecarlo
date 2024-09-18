@@ -9,6 +9,8 @@ export { default as Code} from "./common/Code";
 export { default as Grid} from "./common/Grid";
 export { default as Caption} from "./common/Caption";
 export { default as Filesystem} from "./common/Filesystem";
+export { default as Spinner} from "./common/Spinner";
+
 
 // Layout
 export { default as Header } from "./layout/Header";
