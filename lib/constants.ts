@@ -11,7 +11,7 @@ export const  myMeta = {
     title: "Marco De Carlo",
     applicationName: "Marco De Carlo",
     description:
-      "Marco De Carlo, Web Developer specializzato nella creazione e consulenza di siti web personalizzati. Esperto in soluzioni su misura per aziende e professionisti, dalla progettazione alla messa online, con attenzione a dettagli, funzionalità e design moderno.",
+      "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
     keywords: [
       "Web Developer",
       "Consulenza",
@@ -33,7 +33,7 @@ export const  myMeta = {
     openGraph: {
       title: "Marco De Carlo - Web Developer",
       description:
-        "Marco De Carlo, Web Developer specializzato nella creazione e consulenza di siti web personalizzati. Esperto in soluzioni su misura per aziende e professionisti, dalla progettazione alla messa online, con attenzione a dettagli, funzionalità e design moderno.",
+        "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
       url: "https://marcodecarlo.com",
       siteName: "Marco De Carlo",
       images: [
@@ -48,10 +48,10 @@ export const  myMeta = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Psicoterapetua Grazia De Carlo",
+      title: "Marco De Carlo - Web Developer",
       description:
-        "Psicoterapeuta dedicata all'infanzia, adolescenza, coppie e adulti. Guido i clienti verso il benessere emotivo, aiutandoli a superare sfide e a coltivare relazioni più sane e appaganti.",
+        "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
       creator: "@marco_dec",
-      images: ["/logo_scritte_ok_df.png"],
+      images: ["/marco_decarlo.png"],
     },
 }
