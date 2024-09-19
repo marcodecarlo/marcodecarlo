@@ -10,6 +10,7 @@ export { default as Grid} from "./common/Grid";
 export { default as Caption} from "./common/Caption";
 export { default as Filesystem} from "./common/Filesystem";
 export { default as Spinner} from "./common/Spinner";
+export { default as CookieBanner} from "./common/CookieBanner";
 
 
 // Layout
