@@ -23,7 +23,7 @@ export const  myMeta = {
     authors: [{ name: "Marco De Carlo" }],
     creator: "Marco De Carlo",
     verification: {
-      google: "",
+      google: "gbC2-OOov4OvUmElXppQkpfcTmd20a85i7DaEY1qmKk",
     },
     formatDetection: {
       email: false,
