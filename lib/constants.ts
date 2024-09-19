@@ -53,5 +53,7 @@ export const  myMeta = {
         "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
       creator: "@marco_dec",
       images: ["/marco_decarlo.png"],
+      url: "https://marcodecarlo.com",
     },
-}
+  };
+
