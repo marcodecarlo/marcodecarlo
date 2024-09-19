@@ -23,7 +23,7 @@ export const  myMeta = {
     authors: [{ name: "Marco De Carlo" }],
     creator: "Marco De Carlo",
     verification: {
-      google: "",
+      google: "gbC2-OOov4OvUmElXppQkpfcTmd20a85i7DaEY1qmKk",
     },
     formatDetection: {
       email: false,
@@ -53,5 +53,7 @@ export const  myMeta = {
         "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
       creator: "@marco_dec",
       images: ["/marco_decarlo.png"],
+      url: "https://marcodecarlo.com",
     },
-}
+  };
+
