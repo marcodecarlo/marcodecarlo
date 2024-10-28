@@ -3,7 +3,7 @@ import { Exo_2 } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { myMeta } from "@/lib";
 import { BackgroundFilter, CookieBanner, Footer } from "@/components";
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 
 export const metadata: Metadata = myMeta;
 

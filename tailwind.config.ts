@@ -23,10 +23,25 @@ const config: Config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
+        },
+        loadingAnim: {
+          '0%': { clipPath: 'polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)' },
+          '50%': { clipPath: 'polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)' },
+          '75%': { clipPath: 'polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)' },
+          '100%': { clipPath: 'polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)' }
+        }
       },
       animation: {
         grow: 'grow 0.6s ease-out forwards',
         fadeIn: 'fadeIn 1.5s ease-out',
+        loader: 'rotate 1s linear infinite',
+        loading: 'loadingAnim 2s linear infinite',
+      },
+      rotate: {
+        '3d': 'rotate3d(90, 90, 0, 180deg)',
       },
     },
   },

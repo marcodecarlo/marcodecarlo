@@ -33,7 +33,7 @@ export default function Page() {
 
       <h4 className="font-bold mb-4">
         TIPO DI COOKIE UTILIZZATI DA QUESTI SITI WEB{" "}
-        <Link href="https://marcodecarlo.com" className="text-green-500">
+        <Link href="https://marcodecarlo.com" className="link-primary">
           <span>https://marcodecarlo.com</span>
         </Link>
       </h4>

@@ -1,0 +1,33 @@
+.wrapper{
+    @apply rounded-full bg-gradient-to-tl from-green-700/50 to-green-400/60 p-0.5 shadow-lg md:mb-auto;
+
+    &.large{
+        @apply mx-auto;
+    }
+
+    &.small{
+        @apply mr-auto;
+    }
+
+    .content{
+        @apply rounded-full p-1 shadow-lg ring-8 ring-green-900/10 transition duration-300 group-hover:scale-105;
+
+        &.large{
+            @apply h-36 w-36;
+        }
+    
+        &.small{
+            @apply h-16 w-16;
+        }
+
+        .image{
+            @apply rounded-full;
+        }
+    }
+
+    &:hover{
+        .content{
+            @apply scale-105 shadow-green-500/40;
+        }    
+    }
+}

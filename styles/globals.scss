@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .btn-primary{
+    @apply px-4 py-2 bg-gradient-to-tl from-green-600 to-green-400 text-white rounded-lg hover:from-green-700 hover:to-green-500 hover:shadow-green-500/40 transition-all duration-300 ease-out mt-3 sm:mt-0 mx-auto sm:ml-auto sm:mr-0;
+  }
+
+  .link-primary{
+    @apply text-green-500 relative;
+
+    span{
+
+      &::after {
+        @apply w-0 content-[''] absolute -bottom-1 left-0 right-0 bg-green-500 h-0.5 transition-all duration-200 ease-out;
+
+        &:hover{
+          @apply w-full;
+        }
+      }
+    }
+  }
+}
+
+@layer components {
+  .code-block {
+    box-shadow: 1px 1px 1px hsl(24deg 16% 0% / 0.03),
+      10px 10px 17px -1px hsl(24deg 16% 0% / 0.03),
+      50px 50px 80px -3px hsl(24deg 16% 0% / 0.03);
+    border: 1px solid transparent;
+    background: linear-gradient(
+          160deg,
+          theme('colors.gray.900 / 80%') 20%,
+          theme('colors.gray.900 / 90%') 60%
+        )
+        padding-box,
+      radial-gradient(
+          at left top,
+          theme('colors.green.200 / 25%'),
+          20%,
+          theme('colors.green.200 / 7%') 50%
+        )
+        border-box;
+  }
+}
+
+:root {
+  --background: #0F172A;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14532d;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
