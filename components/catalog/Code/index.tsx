@@ -16,7 +16,7 @@ const Code = ({ children }: { children: ReactNode }) => {
   const slides = Children.map(children, (child, index) => {
     if (
       !isValidElement(child) ||
-      typeof child.props?.["data-rehype-pretty-code-fragment"] === "undefined"
+      typeof child.props?.["data-rehype-pretty-code-figure"] === "undefined"
     ) {
       return null;
     }

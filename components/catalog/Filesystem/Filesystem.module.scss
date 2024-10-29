@@ -13,11 +13,11 @@
         }
 
         &.small{
-            @apply py-2 px-3;
+            @apply py-3 px-3;
         }
 
         &.highlighted{
-            @apply rounded-lg border-none bg-yellow-700/[15%] ring-2 ring-yellow-700/80;
+            @apply rounded-lg border-none bg-yellow-700/[15%] ring-2 ring-yellow-700/80 mt-2;
 
         }
 

@@ -28,4 +28,7 @@ export const rehypePrettyCodeOptions: Partial<Options> = {
   onVisitTitle(node) {
     node.properties.className = ['code-title']
   },
+  onVisitHighlightedLine(node) {
+    node.properties.className = ['highlighted-line']
+  },
 }

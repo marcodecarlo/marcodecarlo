@@ -29,7 +29,16 @@ pre {
    
 pre [data-line] {
     @apply  [counter-increment:line];
+
     &:before{
         @apply mx-3 text-right text-white/30 [content:counter(line)];
+    }
+
+    &.highlighted-line{
+        @apply border-l-blue-700/80 bg-blue-800/[40%] border-l-4;
+
+        &:before{
+            @apply text-blue-200/80;
+        }
     }
 }
