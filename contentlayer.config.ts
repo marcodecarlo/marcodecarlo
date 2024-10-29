@@ -1,9 +1,10 @@
 import { makeSource } from 'contentlayer/source-files';
 import rehypeSlug from "rehype-slug";
-import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
 import {Post} from './content/index';
-import { HEADING_LINK_ANCHOR } from './lib';
+import { rehypePrettyCodeClasses, rehypePrettyCodeOptions } from './lib/rehyePrettyCode';
+import { Pluggable } from 'unified';
 
 export default makeSource({
     contentDirPath: "content",
@@ -14,14 +15,13 @@ export default makeSource({
         return options
       },
       rehypePlugins: [
-        [rehypeSlug, rehypePrettyCode],    
+        [rehypeSlug],
+        [rehypePrettyCode, rehypePrettyCodeOptions] as unknown as Pluggable,
+        [rehypePrettyCodeClasses],   
         [
           rehypeAutolinkHeadings,
           {
-            behavior: "wrap",
-            properties: {
-              className: [HEADING_LINK_ANCHOR],
-            },
+            behavior: "wrap"
           },
         ],
       ],

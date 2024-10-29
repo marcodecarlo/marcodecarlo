@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "code.module.scss";
 
 @layer base {
   .btn-primary{
@@ -23,35 +24,13 @@
   }
 }
 
-@layer components {
-  .code-block {
-    box-shadow: 1px 1px 1px hsl(24deg 16% 0% / 0.03),
-      10px 10px 17px -1px hsl(24deg 16% 0% / 0.03),
-      50px 50px 80px -3px hsl(24deg 16% 0% / 0.03);
-    border: 1px solid transparent;
-    background: linear-gradient(
-          160deg,
-          theme('colors.gray.900 / 80%') 20%,
-          theme('colors.gray.900 / 90%') 60%
-        )
-        padding-box,
-      radial-gradient(
-          at left top,
-          theme('colors.green.200 / 25%'),
-          20%,
-          theme('colors.green.200 / 7%') 50%
-        )
-        border-box;
-  }
-}
-
 :root {
   --background: #0F172A;
 }
 
-
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 5px;
+  height:  5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -64,5 +43,6 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #124b29;
 }
+
