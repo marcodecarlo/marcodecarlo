@@ -5,6 +5,7 @@ import styles from "./Nav.module.scss";
 
 interface NavItemProps {
   children?: ReactNode;
+  label: string;
   href: string;
   targetBlank?: boolean;
   className?: string;
@@ -13,6 +14,7 @@ interface NavItemProps {
 
 function NavItem({
   children,
+  label,
   href,
   targetBlank = false,
   className,
@@ -21,6 +23,7 @@ function NavItem({
   return (
     <Link
       href={href}
+      aria-label={label}
       className={`${styles["nav-item"]} ${className ?? ""}`}
       target={targetBlank ? "_blank" : ""}
     >
@@ -45,16 +48,21 @@ const Nav = ({ sticky }: NavProps) => {
     <div
       className={`${styles["wrapper-nav"]} ${sticky ? styles["sticky"] : ""}`}
     >
-      <NavItem href="/progetti" Icon={Light}>
+      <NavItem href="/progetti" Icon={Light} label="Progetti">
         Progetti
       </NavItem>
-      <NavItem href="mailto:marcodecarlo.developer@gmail.com" Icon={Email}>
+      <NavItem
+        href="mailto:marcodecarlo.developer@gmail.com"
+        Icon={Email}
+        label="Contattami"
+      >
         Contattami
       </NavItem>
       <NavItem
         href="https://www.linkedin.com/in/marco-de-carlo/"
         targetBlank
         Icon={Linkedin}
+        label="Linkedin"
       >
         Linkedin
       </NavItem>
@@ -69,15 +77,21 @@ const NavFooter = () => {
         href="https://www.linkedin.com/in/marco-de-carlo/"
         targetBlank
         Icon={Linkedin}
+        label="Linkedin"
       />
 
       <NavItem
         href="https://github.com/marcodecarlo"
         targetBlank
         Icon={GithubIcon}
+        label="GitHub"
       />
 
-      <NavItem href="mailto:marcodecarlo.developer@gmail.com" Icon={Email} />
+      <NavItem
+        href="mailto:marcodecarlo.developer@gmail.com"
+        Icon={Email}
+        label="Email"
+      />
     </div>
   );
 };

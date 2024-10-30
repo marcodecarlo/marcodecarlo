@@ -39,7 +39,11 @@ const Footer = () => {
       <div className={styles["content"]}>
         <NavFooter />
 
-        <Link href="mailto:marcodecarlo.developer@gmail.com" target="_blank">
+        <Link
+          href="mailto:marcodecarlo.developer@gmail.com"
+          target="_blank"
+          aria-label="Email"
+        >
           <Marcodecarlo enablePowered={true} />
         </Link>
       </div>
