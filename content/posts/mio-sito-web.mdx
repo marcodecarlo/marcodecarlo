@@ -1,47 +1,369 @@
 ---
 title: "Il Mio Sito Web Personale: Portfolio e Blog."
-description: "Descrizione di come ho realizzato il mio sito personale. Ogni fase, dall'idea iniziale alla scelta delle tecnologie, è stata pianificata per creare una piattaforma funzionale e rappresentativa del mio lavoro."
+description: "Descrizione di come ho realizzato il mio sito personale, pianificando ogni fase, dall'idea iniziale alla scelta delle tecnologie, per creare una piattaforma funzionale e rappresentativa del mio lavoro."
 publishedAt: "2024-09-20"
 status: "published"
 ---
 
-<Img
-  src={`/mio-sito-web/home.png`}
-  width={2154}
-  height={1232}
-  bleed={false}
-></Img>
+<Img src={`/mio-sito-web/home.png`} width={2154} height={1232} bleed={false} />
 
 Sito Web: [https://marcodecarlo.com/](https://marcodecarlo.com)
 
 GitHub: [https://github.com/marcodecarlo/marcodecarlo/](https://github.com/marcodecarlo/marcodecarlo/tree/develop)
 
-Questo sito è stato progettato per presentarmi come professionista e raccogliere in un unico spazio i progetti che ho realizzato. Ho integrato una sezione progetti dove pubblico riflessioni, idee e aggiornamenti sui miei sviluppi. L'obiettivo è fornire una panoramica dettagliata delle mie competenze e attività, facilitando così la connessione con chi cerca un professionista nel mio campo.
+Questo sito è stato progettato per presentare il mio profilo professionale e riunire i progetti in un'unica piattaforma. L'obiettivo? Offrire una panoramica chiara e approfondita delle mie competenze e agevolare le connessioni professionali.
 
 ## Stack Tecnologico
 
-Durante la scelta dello stack tecnologico, ho considerato tre fattori chiave:
+La scelta delle tecnologie è stata guidata da tre criteri:
 
-- **Velocità** - Era fondamentale poter realizzare e pubblicare il sito in tempi rapidi, mantenendo comunque un'alta qualità del risultato.
-- **Piacere personale** - Ho optato per tecnologie che mi piacciono e con cui mi trovo a mio agio, per rendere il processo di sviluppo più divertente e stimolante. Allo stesso tempo, ho inserito elementi nuovi per continuare a migliorare le mie competenze.
-- **Crescita** - Ho sfruttato questo progetto come opportunità per imparare nuove tecnologie e migliorare le mie capacità, sperimentando soluzioni innovative.
+- **Velocità**: era fondamentale poter realizzare e pubblicare il sito in tempi rapidi, mantenendo comunque un'alta qualità del risultato.
+- **Piacere personale**: lavorare con tecnologie che apprezzo, sperimentando al contempo nuove soluzioni per crescere.
+- **Crescita**: sfruttare il progetto per apprendere nuove tecnologie.
 
-La scelta è ricaduta principalmente su queste librerie [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Contentlayer](https://contentlayer.dev/) e [Typescript](https://www.typescriptlang.org/).
+Lo stack include [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [MDX](https://mdxjs.com/) e [Typescript](https://www.typescriptlang.org/).
 
 ### Next.js
 
+[Next.js](https://nextjs.org/) è un framework basato su React che semplifica la configurazione e ottimizza le prestazioni. Tra i vantaggi che ho trovato:
+
+- Gestione semplificata della configurazione.
+- Funzionalità avanzate integrate (ottimizzazione immagini, gestione API).
+- Flessibilità per la gestione dei dati e delle rotte.
+
+Grazie a Next.js, posso sviluppare applicazioni più efficaci e scalabili, che sarebbero altrimenti difficili da mantenere come sviluppatore singolo.
+
 ### Tailwind CSS
 
-### Typescript
+[Tailwind CSS](https://tailwindcss.com/) è un framework CSS che utilizza utility class per semplificare la stilizzazione. Le sue principali qualità:
 
-### Contentlayer
+- Documentazione chiara e intuitiva.
+- Integrazione perfetta con Next.js.
+- Miglioramenti all’esperienza di sviluppo in VS Code con estensioni come Tailwind CSS IntelliSense.
+- Estensibilità con SASS per moduli di stile specifici.
 
-## Design
+### TypeScript
 
-## SEO
+[TypeScript](https://www.typescriptlang.org/) fornisce un sistema di tipi statici per JavaScript, migliorando la qualità del codice. TypeScript mi permette di individuare errori durante la scrittura, velocizzando il flusso di lavoro e rendendo superflua la consultazione continua della documentazione.
+
+### MDX
+
+[MDX](https://mdxjs.com/) consente di combinare componenti JSX con Markdown. Questa caratteristica è perfetta per creare articoli interattivi e progetti personalizzati in cui i componenti diventano parte integrante del contenuto.
+
+## Contentlayer
+
+[Contentlayer](https://contentlayer.dev/) semplifica la gestione dei contenuti in Next.js, importando file Markdown/MDX come componenti React. La tipizzazione robusta assicura che i dati siano coerenti e ben strutturati.
+
+### Definizione dei tipi
+
+La tipizzazione dei post è definita in un file schema dedicato, e il percorso dei file è configurato per accedere direttamente ai file .mdx.
+
+<Code>
+```ts title="./content/definitions/Post.ts" {5}
+import { defineDocumentType } from "contentlayer/source-files";
+
+const Post = defineDocumentType(() => ({
+name: "Post",
+filePathPattern: "posts/\*.mdx",
+contentType: "mdx",
+fields: {
+title: { type: "string", required: true },
+publishedAt: { type: "string", required: true },
+description: { type: "string" },
+status: { type: "enum", options: ["draft", "published"], required: true },
+},
+}));
+
+export default Post;
+```
+
+```ts title="./contentlayer.config.ts" {2}
+export default makeSource({
+    contentDirPath: "content",
+    documentTypes: [Post],
+    ...
+});
+```
+
+</Code>
+
+Nel percorso definito da `contentDirPath{:js}` + `filePathPattern{:js}` = `/content/posts{:text}` possiamo trovare tutti i file in formato .mdx che vanno a descrivere i diversi progetti presenti nel sito web.
+
+### Pagine e Routing
+
+<Grid x="aside">
+  <Filesystem
+    size="small"
+    items={[
+      {
+        name: "app",
+        items: [
+          {
+            name: "(main)",
+            items: [
+              {
+                name: "progetti",
+                items: [{
+                  name: "[slug]",
+                  items: [{
+                    name: "page.tsx"
+                  }],
+                }],
+              },
+            ],
+          },
+        ],
+      },
+    ]}
+
+/>
+
+</Grid>
+
+Ogni progetto è una pagina dinamica in `progetti/[slug]{:text}`, con rotte generate tramite `generateStaticParams(){:ts}` di Next.js per SEO ottimizzata e migliori prestazioni.
+
+```ts title="./app/(main)/progetti/[slug]/page.tsx"
+import { allPosts } from "@/.contentlayer/generated";
+
+export async function generateStaticParams() {
+  const posts = allPosts
+    .filter((p) => p.status === "published")
+    .map((p) => ({ slug: p.slug }));
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default function Page({ params }: { params: { slug: string } }) {
+  const post = allPosts.find((post) => post.slug === params?.slug);
+
+  if (!post) {
+    notFound();
+  }
+  const formattedPost = formatPost(post);
+
+  return <Post post={formattedPost} />;
+}
+```
+
+Grazie all'utilizzo di `generateStaticParams(){:ts}` vengono generati in modo automatico le rotte del sito web, durante il processo di build.
+Abbiamo utilizzato `allPosts{:ts}` che importa tutti i post generati nella build, grazie a ContentLayer.
+
+### Componenti per MDX
+
+Sono stati realizzati diversi componenti personalizzati per migliorare la visualizzazione di elementi HTML, come titoli, liste, immagini, ecc... e per avere un maggior controllo sul loro stile e/o comportamento.
+
+Questi componenti vengono esportati e successivamente vengono usati per sostituire gli elementi HTML presenti nel contenuto dei file MDX.
+L'hook `useMDXComponent{:ts}` permette di trasformare il codice MDX in un componente React, pronto per essere renderizzato con JSX.
+
+```ts title="./components/post/Post.tsx" {5,9}
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { components } from "@/lib/mdx";
+
+export default function Post({ post }: { post: FormattedPost }) {
+  const MDXContent = useMDXComponent(post.body.code);
+  return (
+    <>
+      <h1>{post.title}</h1>
+      <MDXContent components={components} />
+    </>
+  );
+}
+```
+
+## Design e Layout
+
+Sono un appassionato di design minimalista, dove il contenuto è il fulcro dell’esperienza utente. Tuttavia, un design semplice non deve essere privo di personalità. Il design rappresenta l'identità di una persona o di un’azienda.
+
+Durante i miei colloqui ho imparato che l'aspetto visivo di un sito può essere determinante per le prime impressioni, specialmente per i recruiter che hanno poco tempo per valutare tutte le competenze tecniche. Per questo, ho curato ogni dettaglio, aggiungendo elementi visivi per catturare l’attenzione e trasmettere professionalità.
+
+### Layout e Configurazioni Tailwind
+
+<Grid x="aside">
+  <Filesystem
+    size="small"
+    withCounters={true}
+    items={[
+      {
+        name: "app",
+        items: [
+          {
+            name: "(main)",
+            items: [
+              { name: "progetti", items: [] },
+              { name: "layout.tsx", status: "highlighted" },
+            ],
+          },
+          { name: "layout.tsx", status: "highlighted" },
+        ],
+      },
+    ]}
+  />
+</Grid>
+
+Grazie NextJS ho definito un layout root, che viene utilizzato per le pagine presenti nella directory ./app, mentre è stato definito un diverso layout per le pagine interne al sito web in modo da poter utilizzare un header di tipo sticky.
+
+Per creare un layout flessibile e responsivo, ho personalizzato le griglie tramite Tailwind, andando a definire due principali classi di layout grid specifiche (layout-sm e layout-xl).
+
+```ts title="./tailwind.config.ts"
+{
+  plugins:[
+    plugin(function({addBase, theme}){
+      addBase({
+        ".layout-sm": {
+          "grid-template-columns": `1fr min(${theme("screens.sm")},100%) 1fr`,
+        },
+        ".layout-xl": {
+          "grid-template-columns": `1fr minmax(auto,${theme("spacing.60")}) min(${theme("screens.sm")},100%) minmax(auto,${theme("spacing.60")}) 1fr`,
+        },
+      })
+    })
+  ],
+}
+```
+
+Questo tipo di layout permette di adattarsi a diverse dimensioni di schermo, creando una colonna centrale principale e due colonne ai lati.
+
+La caratteristica principale è quella di aver definito la colonna centrale con una dimensione massima del breakpoint sm, cioè la dimensione massima per i mobile, in modo tale che la colonna centrale sia ottimizzata per i dispositivi mobile e le colonne laterali si espandono correttamente sui schermi più grandi.
+
+### Organizzazione dei Componenti
+
+<Grid x="aside">
+  <Filesystem
+    size="small"
+    withCounters={true}
+    items={[
+      {
+        name: "components",
+        items: [
+          {
+            name: "catalog",
+            items: [],
+          },
+          {
+            name: "common",
+            items: [],
+          },
+          {
+            name: "layout",
+            items: [],
+          },
+          {
+            name: "svg",
+            items: [],
+          },
+        ],
+      },
+    ]}
+  />
+</Grid>
+
+Ho organizzato la struttura delle cartelle per i componenti in quattro macro-aree:
+
+- Catalog per i componenti Markdown.
+- Common per i componenti riutilizzabili.
+- Layout per elementi di struttura (es: header, footer).
+- SVG per icone e loghi.
+
+Ogni componente ha un proprio file di stile **.module.scss** per una maggiore leggibilità del codice.
+
+## SEO e Sitemap
+
+Per l'ottimizzazione SEO, ho integrato robots.txt e sitemap.xml, generata dinamicamente con Next.js. infatti NextJs permette di generare dinamicamente la sitemap per tutte le pagine del sito, garantendo che ogni nuovo progetto sia automaticamente aggiunto e indicizzato. Ogni pagina dei progetti è stata inserita nella sitemap, così quando si effettua la build viene generata in modo autoomatico. Visitando il sito online sarà possibile vedere la sitemap generata.
+
+<Code>
+```ts title="./app/(main)/progetti/sitemap.ts"
+import { allPosts } from '@/.contentlayer/generated';
+import type { MetadataRoute } from 'next';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+const posts = await allPosts
+.filter((p) => p.status === "published")
+
+    return posts.map((p) => ({
+      url: `https://marcodecarlo.com/progetti/${p.slug}`,
+      lastModified: new Date(p.publishedAt),
+    }))
+
+}
+
+````
+
+```xml title="sitemap.xml"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://marcodecarlo.com</loc>
+    <lastmod>2024-09-19T11:02:26.296Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://marcodecarlo.com/contattami</loc>
+    <lastmod>2024-09-19T11:02:26.296Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marcodecarlo.com/progetti/antico-telaio</loc>
+    <lastmod>2024-06-01T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marcodecarlo.com/progetti/mio-sito-web</loc>
+    <lastmod>2024-09-20T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://marcodecarlo.com/progetti/psicoterapeuta-blog</loc>
+    <lastmod>2024-09-01T00:00:00.000Z</lastmod>
+  </url>
+</urlset>
+````
+
+</Code>
+
+Grazie all'uso di `generateMetadata(){:ts}` vengono generati dinamicamente i metadati delle pagine. Viene così personalizzato il titolo per ogni pagina e l'url canonico che è utile a livello SEO perchè aiuta i moti di ricerca a capire quale versione di una pagina è considerata quella principale, evitando così errori di **contenuti duplicati**.
+
+```ts title="./app/(main)/progetti/[slug]/page.tsx"
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = allPosts.find((post) => post.slug === params?.slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const url = `/progetti/${post.slug}`;
+
+  return {
+    title: `${post.title} ⋅ Marco De Carlo`,
+    alternates: { canonical: url },
+  };
+}
+```
 
 ## Vercel
 
-## Nuovi sviluppi per il futuro
+Vercel è una piattaforma di deployment e collaborazione per sviluppatori frontend integrata con GitHub, che supporta un flusso di lavoro fluido tra sviluppo e rilascio. Nel mio caso, gestisco due branch principali:
 
-<div className="text-center text-4xl">completo presto... 😊</div>
+- **develop**: dove continuo lo sviluppo attivo delle funzionalità del sito web, effettuando modifiche e miglioramenti in corso.
+- **main**: in cui inserisco solo versioni stabili dopo aver completato una release dal branch "develop".
+
+Seguo una numerazione del tipo "X.X.X-SNAPSHOT", dove:
+
+- Il primo numero rappresenta la major version, e viene incrementato per modifiche molto significative.
+- Il secondo è la minor version, che cambia quando vengono aggiunte nuove funzionalità.
+- Il terzo è la patch version, aggiornata per correzioni di bug o miglioramenti minori.
+- `SNAPSHOT{:text}` indica che si tratta di una versione in fase di sviluppo.
+
+Quando le modifiche passano su main, il suffisso `-SNAPSHOT{:text}` viene rimosso per indicare che la versione è stabile e pronta per la distribuzione.
+
+## Futuri sviluppi
+
+Includerò una sezione Blog per condividere aggiornamenti, esperienze e approfondimenti sugli strumenti e sulle tecnologie che utilizzo.
+
+La possibilità di aggiungere delle categorie e un input di ricerca per migliorare l'esperienza d'uso.
+
+Infine vorrei portare il multilingua in inglese per rendere il mio lavoro fluibile a più persone possibili.
