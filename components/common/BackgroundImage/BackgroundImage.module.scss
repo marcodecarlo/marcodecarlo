@@ -1,0 +1,7 @@
+.wrapper{
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+
+    .image{
+        @apply h-full bg-[url('https://res.cloudinary.com/graziadecarlo/image/upload/v1730288072/bg_gradient_wp.webp')] bg-top bg-no-repeat opacity-[0.8];
+    }
+}

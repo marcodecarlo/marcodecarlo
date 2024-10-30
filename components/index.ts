@@ -3,14 +3,31 @@ export { default as ProfileImage } from "./common/ProfileImage";
 export { Nav, NavFooter} from "./common/Nav";
 export { ContentLink } from "./common/ContentLink";
 export { default as ScrollToTop } from "./common/ScrollToTop";
-export { default as Aside } from "./common/Aside";
 export { default as BlurImage} from "./common/BlurImage";
-export { default as Code} from "./common/Code";
-export { default as Grid} from "./common/Grid";
 export { default as Caption} from "./common/Caption";
-export { default as Filesystem} from "./common/Filesystem";
 export { default as Spinner} from "./common/Spinner";
 export { default as CookieBanner} from "./common/CookieBanner";
+export { default as BackgroundImage} from "./common/BackgroundImage";
+export { default as PrideFlag} from "./common/PrideFlag";
+
+// Catalog 
+export { default as Code} from "./catalog/Code";
+export { default as Grid} from "./catalog/Grid";
+export { default as Aside } from "./catalog/Aside";
+export { default as Filesystem} from "./catalog/Filesystem";
+export { default as Anchor} from "./catalog/Anchor";
+export { default as Unordered} from "./catalog/Unordered";
+export { default as Ordered} from "./catalog/Ordered";
+export { default as Horizontal} from "./catalog/Horizontal";
+export { default as Image} from "./catalog/Image";
+export { default as Blockquote} from "./catalog/Blockquote";
+export { default as Deleted} from "./catalog/Text/Deleted";
+export { default as Strong} from "./catalog/Text/Strong";
+export { default as H1 } from "./catalog/Heading/H1";
+export { default as H2 } from "./catalog/Heading/H2";
+export { default as H3 } from "./catalog/Heading/H3";
+export { default as H4 } from "./catalog/Heading/H4";
+export { default as H5 } from "./catalog/Heading/H5";
 
 
 // Layout

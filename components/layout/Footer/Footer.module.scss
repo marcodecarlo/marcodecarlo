@@ -1,0 +1,11 @@
+.wrapper{
+    @apply border-t border-green-800/50 font-medium mt-12;
+
+    p{
+        @apply text-green-100/20 text-sm;
+    }
+
+    .content{
+        @apply flex items-center justify-between py-10;
+    }
+}

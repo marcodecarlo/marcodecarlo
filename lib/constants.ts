@@ -55,5 +55,6 @@ export const  myMeta = {
       images: ["/marco_decarlo.png"],
       url: "https://marcodecarlo.com",
     },
+    alternates: { canonical: "https://marcodecarlo.com" },
   };
 

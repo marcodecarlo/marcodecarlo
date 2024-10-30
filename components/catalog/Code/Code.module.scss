@@ -1,0 +1,19 @@
+.select{
+    @apply mb-2 text-sm font-medium;
+}
+
+.wrapper{
+    @apply flex flex-wrap;
+
+    .button{
+        @apply mr-2 mb-2 rounded-lg px-2 py-1 text-sm font-medium;
+
+        &.selected{
+            @apply bg-green-100/30 text-white;
+        }
+
+        &.no-selected{
+            @apply bg-green-100/10 text-green-100/70 hover:bg-green-100/20 hover:text-green-100;
+        }
+    }
+}

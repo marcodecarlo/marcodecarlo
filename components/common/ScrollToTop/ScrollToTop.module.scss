@@ -1,0 +1,8 @@
+.button{
+    @apply flex items-center gap-2 text-sm text-green-200/30 hover:text-green-200/70 hover:animate-pulse ml-auto;
+
+    svg{
+        @apply rotate-90;
+    }
+
+}

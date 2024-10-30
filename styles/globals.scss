@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "code.scss";
+
+@layer base {
+  .btn-primary{
+    @apply px-4 py-2 bg-gradient-to-tl from-green-600 to-green-400 text-white rounded-lg hover:from-green-700 hover:to-green-500 hover:shadow-green-500/40 transition-all duration-300 ease-out mt-3 sm:mt-0 mx-auto sm:ml-auto sm:mr-0;
+  }
+
+  .link-primary{
+    @apply text-green-500 relative;
+
+    span{
+
+      &::after {
+        @apply w-0 content-[''] absolute -bottom-1 left-0 right-0 bg-green-500 h-0.5 transition-all duration-200 ease-out;
+
+        &:hover{
+          @apply w-full;
+        }
+      }
+    }
+  }
+}
+
+:root {
+  --background: #0F172A;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height:  5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14532d;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #124b29;
+}
+

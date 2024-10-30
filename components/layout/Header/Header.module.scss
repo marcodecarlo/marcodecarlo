@@ -1,0 +1,19 @@
+.wrapper{
+    @apply flex flex-wrap items-center;
+
+    &.sticky{
+        @apply rounded-2xl backdrop-blur-sm p-2 shadow-lg shadow-green-800/50 animate-grow;
+    }
+
+    .content{
+        @apply text-center sm:mx-6 sm:text-left mx-auto;
+
+        .title{
+            @apply text-4xl font-semibold leading-none text-green-100;
+        }
+
+        .sub-title{
+            @apply mt-2 text-lg font-medium leading-none text-green-100/50;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.wrapper{
+    @apply fixed bottom-0 left-0 w-full bg-black p-4 shadow-lg shadow-green-800/50 z-50;
+
+    .content{
+        @apply max-w-7xl mx-auto flex flex-wrap items-center justify-between;
+
+        p{
+            @apply text-white text-sm;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.wrapper{
+    @apply block overflow-hidden rounded-2xl bg-white/5 p-7 drop-shadow-md transition duration-300 hover:bg-white/10 hover:drop-shadow-lg;
+
+    .title{
+        @apply text-xl text-green-100/90 transition duration-300 line-clamp-2 hover:text-green-100/90;
+    }
+
+    .content-icon{
+        @apply mt-1 ml-2 shrink-0;
+
+        .icon{
+            @apply w-5 text-green-100/30 transition-colors hover:text-green-100/50;
+        }
+    }
+
+    .body{
+        @apply mt-4 text-lg text-green-100/70 line-clamp-3;
+    }
+
+    .meta{
+        @apply flex flex-wrap space-x-2 text-base text-green-100/50;
+    }
+}

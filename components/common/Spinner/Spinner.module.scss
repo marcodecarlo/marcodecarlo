@@ -1,0 +1,12 @@
+.loader{
+    @apply w-12 h-12 rounded-full relative m-auto animate-loader;
+
+    &:before,
+    &:after{
+        @apply content-[''] absolute inset-0 rounded-full border-solid border-4 border-white box-border animate-loading;
+    }
+
+    &:after{
+        @apply inset-2 border-green-700 transform rotate-3d;
+    }
+}
