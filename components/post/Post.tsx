@@ -42,9 +42,10 @@ export default function Post({ post }: { post: FormattedPost }) {
             </>
           ) : null}
 
-          <div className="flex items-center justify-between">
-            <ScrollToTop>{`Torna all'inizio`}</ScrollToTop>
-          </div>
+          <ScrollToTop>
+            {" "}
+            <Left /> {`Torna all'inizio`}
+          </ScrollToTop>
         </div>
       </div>
 
