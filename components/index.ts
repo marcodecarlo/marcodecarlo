@@ -7,6 +7,7 @@ export { default as BlurImage} from "./common/BlurImage";
 export { default as Caption} from "./common/Caption";
 export { default as Spinner} from "./common/Spinner";
 export { default as CookieBanner} from "./common/CookieBanner";
+export { default as BackgroundImage} from "./common/BackgroundImage";
 
 // Catalog 
 export { default as Code} from "./catalog/Code";

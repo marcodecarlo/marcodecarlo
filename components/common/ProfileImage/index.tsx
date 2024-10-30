@@ -21,7 +21,7 @@ export default function ProfileImage({ size = "large" }: ProfileImageProps) {
         }`}
       >
         <Image
-          src="/marco_decarlo.png"
+          src="/marco_decarlo.webp"
           quality={100}
           width={144}
           height={144}

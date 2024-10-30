@@ -16,7 +16,7 @@ const config: Config = {
       },
       keyframes: {
         grow: {
-          '0%': { transform: 'scale(0.5)', opacity: '0' },
+          '0%': { transform: 'scale(0.5)', opacity: '0.2' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
         fadeIn: {

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { myMeta } from "@/lib";
-import { BackgroundFilter, CookieBanner, Footer } from "@/components";
+import {
+  BackgroundFilter,
+  BackgroundImage,
+  CookieBanner,
+  Footer,
+} from "@/components";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = myMeta;
@@ -30,9 +35,7 @@ export default function RootLayout({
 
           <Footer />
         </div>
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="h-full bg-[url('https://res.cloudinary.com/graziadecarlo/image/upload/v1726317965/bg_gradient.png')] bg-top bg-no-repeat opacity-[0.8]"></div>
-        </div>
+        <BackgroundImage />
         <CookieBanner />
       </body>
       <GoogleTagManager gtmId="GTM-M6VWZPFW" />
