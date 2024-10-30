@@ -8,6 +8,7 @@ export { default as Caption} from "./common/Caption";
 export { default as Spinner} from "./common/Spinner";
 export { default as CookieBanner} from "./common/CookieBanner";
 export { default as BackgroundImage} from "./common/BackgroundImage";
+export { default as PrideFlag} from "./common/PrideFlag";
 
 // Catalog 
 export { default as Code} from "./catalog/Code";

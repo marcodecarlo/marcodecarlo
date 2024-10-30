@@ -1,0 +1,25 @@
+@keyframes oscillate {
+    from {
+      transform: translateY(var(--billow));
+    }
+    to {
+      transform: translateY(calc(var(--billow) * -1));
+    }
+}
+  
+.flag {
+    @apply flex aspect-[3/2] animate-[oscillate_600ms_ease-in-out_infinite_alternate] absolute w-14 bottom-24 left-4 md:fixed md:bottom-10 md:left-16 md:w-20;
+    
+    .column {
+        @apply flex-1 flex flex-col animate-[oscillate_500ms_ease-in-out_infinite_alternate];
+
+        &:first-child{
+            @apply rounded-tl-lg rounded-bl-lg;
+        }
+
+        &:last-child{
+            @apply rounded-tr-lg rounded-br-lg;
+        }
+    }
+}
+  
