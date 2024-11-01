@@ -36,12 +36,28 @@ export async function generateMetadata({
       url: url,
       siteName: "Marco De Carlo",
       type: "website",
+      images: [
+        {
+          url: "/marco_decarlo.png",
+          width: 300,
+          height: 200,
+          alt: "Marco De Carlo - Web Developer",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} ⋅ Marco De Carlo`,
       description: post?.description,
       creator: "@marco_dec",
+      images: [
+        {
+          url: "/marco_decarlo.png",
+          width: 300,
+          height: 200,
+          alt: "Marco De Carlo - Web Developer",
+        },
+      ],
     },
     alternates: { canonical: url },
   };
