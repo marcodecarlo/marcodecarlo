@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-exo)", ...defaultTheme.fontFamily.sans],
+        skeleton: ["var(--font-redacted)"],
       },
       keyframes: {
         grow: {

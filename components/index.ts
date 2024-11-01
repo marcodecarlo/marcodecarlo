@@ -34,10 +34,11 @@ export { default as H5 } from "./catalog/Heading/H5";
 export { default as Header } from "./layout/Header";
 export { default as Footer } from "./layout/Footer";
 
-// Project
+// Post
 export { default as PostPreview } from "./post/PostPreview";
 export { default as Post} from "./post/Post";
 export { default as PostTableOfContents} from "./post/PostTableOfContents";
+export { default as PostPreviewSkeleton} from "./post/PostPreviewSkeleton";
 
 // SVG
 export { default as BackgroundFilter } from "./svg/BackgroundFilter";
