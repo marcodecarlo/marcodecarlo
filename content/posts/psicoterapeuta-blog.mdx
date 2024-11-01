@@ -1,25 +1,28 @@
 ---
 title: "Psicoterapeuta Blog: Sito Web e piccolo Blog"
-description: "Realizzazione di un sito web vetrina per una psicoterapeuta, comprensivo di una sezione blog. Il sito offre una panoramica dettagliata dei servizi professionali e consente alla psicoterapeuta di pubblicare articoli, fornendo così contenuti informativi e aggiornati ai visitatori. Il progetto combina un design elegante con funzionalità avanzate per migliorare la visibilità e l'interazione online."
+description: "Sviluppo di un sito web vetrina per una psicoterapeuta, integrato con una sezione blog. Il sito offre una panoramica dettagliata dei servizi professionali e include un CMS per la gestione autonoma degli articoli."
 publishedAt: "2024-09-01"
 status: "published"
 ---
 
 <Img
-  src={`/psicoterapeuta-blog/home.png`}
+  src={`/psicoterapeuta-blog/home.webp`}
   width={2154}
   height={1232}
   bleed={false}
+  alt="Sito web psicoterapeuta"
 ></Img>
 
 Sito Web: [https://graziadecarlo.it/](https://graziadecarlo.it/)
 
-È stato sviluppato un sito web vetrina per una psicoterapeuta, progettato per presentare in modo chiaro e professionale i servizi offerti. Ogni servizio è descritto in dettaglio per fornire agli utenti una panoramica completa delle competenze della professionista.
-Inoltre, è stata implementata una sezione dedicata al blog, accessibile tramite login, dove la psicoterapeuta può pubblicare i propri articoli, rendendoli disponibili a tutti gli utenti. Questa funzionalità permette di mantenere il sito sempre aggiornato e di creare una connessione diretta con i visitatori interessati ai temi trattati.
+Il sito web [https://graziadecarlo.it/](https://graziadecarlo.it/) rappresenta una vetrina per una psicoterapeuta per presentare in modo chiaro e professionale i servizi offerti.
+Ogni servizio è descritto in dettaglio per fornire agli utenti una panoramica completa delle competenze della professionista.
+
+Un aspetto fondamentale del progetto è stata l’implementazione di una sezione blog, pensata per accogliere articoli tematici della psicoterapeuta. Grazie a un sistema di gestione dei contenuti personalizzato (CMS), accessibile tramite l'autenticazione Google, è possibile gestire il blog autonomamente anche senza competenze tecniche. Questo approccio mantiene i contenuti aggiornati, contribuendo a stabilire un dialogo continuo con i visitatori interessati.
 
 ## Stack Tecnologico
 
-Durante la scelta dello stack tecnologico, ho considerato tre fattori chiave:
+Lo sviluppo del sito ha previsto l’utilizzo di un set di tecnologie moderne e consolidato. Le scelte tecnologiche sono state guidate da tre obiettivi principali:
 
 - **Velocità** - Era fondamentale poter realizzare e pubblicare il sito in tempi rapidi, mantenendo comunque un'alta qualità del risultato.
 - **Piacere personale** - Ho optato per tecnologie che mi piacciono e con cui mi trovo a mio agio, per rendere il processo di sviluppo più divertente e stimolante. Allo stesso tempo, ho inserito elementi nuovi per continuare a migliorare le mie competenze.
@@ -29,49 +32,586 @@ La scelta è ricaduta principalmente su queste librerie [Next.js](https://nextjs
 
 ### Next.js
 
-Next.js è un framework basato su React che gestisce la configurazione e i requisiti per la creazione di siti web moderni.
+[Next.js](https://nextjs.org/) è un framework basato su React che semplifica la configurazione e ottimizza le prestazioni. Tra i vantaggi che ho trovato:
 
-Apprezzo particolarmente Next.js per diversi motivi:
+- Gestione semplificata della configurazione.
+- Funzionalità avanzate integrate (ottimizzazione immagini, gestione API).
+- Flessibilità per la gestione dei dati e delle rotte.
 
-- È abbastanza flessibile da gestire.
-- Facilita l'implementazione di task solitamente noiosi come la configurazione di Webpack, Babel, TypeScript e ESLint.
-- Offre benefici di performance integrati, come l'ottimizzazione delle immagini e degli script, oltre a opzioni flessibili per il recupero dei dati e le rotte API.
-  Ciò che ho apprezzato di più di Next.js nel tempo è la possibilità di implementare funzionalità avanzate, che sarebbero normalmente fuori dalla portata di un singolo sviluppatore. Seguendo NextJs, ho imparato a costruire applicazioni frontend migliori e più efficienti.
+Grazie a Next.js, posso sviluppare applicazioni più efficaci e scalabili, che sarebbero altrimenti difficili da mantenere come sviluppatore singolo.
 
-### Material UI
+### TypeScript
 
-Material UI è una libreria di componenti React che si basa sulle linee guida di Material Design di Google.
+[TypeScript](https://www.typescriptlang.org/) è uno strumento potente che aggiunge il supporto dei tipi statici a JavaScript, consentendo di rilevare errori durante lo sviluppo. Con TypeScript:
 
-Mi piace usare Material UI perché:
-
-- Fornisce componenti predefiniti e stilizzati che sono pronti all'uso e altamente personalizzabili.
-- Mi consente di costruire interfacce utente moderne e responsive senza dovermi preoccupare di dettagli CSS complessi.
-- È ben documentata e ha una comunità attiva, il che rende facile trovare soluzioni o ispirazioni quando incontro sfide di design.
-  In particolare, Material UI mi ha aiutato a creare rapidamente interfacce professionali, risparmiando tempo nello sviluppo del design e permettendomi di concentrarmi maggiormente sulla funzionalità del sito.
+- Miglioro la qualità del codice grazie a una tipizzazione rigorosa.
+- Riduco il bisogno di ricorrere alla documentazione durante il lavoro, incrementando la velocità del flusso di lavoro.
+- Aumento la robustezza dell'applicazione grazie al supporto integrato per IDE e refactoring.
 
 ### Prisma
 
-Prisma è un ORM (Object-Relational Mapping) che facilita la gestione e l'interrogazione del database con un'interfaccia più intuitiva rispetto alla scrittura di query SQL tradizionali.
-
-Apprezzo Prisma perché:
+[Prisma](https://www.prisma.io/) è un ORM (Object-Relational Mapping) che facilita la gestione e l'interrogazione del database con un'interfaccia più intuitiva rispetto alla scrittura di query SQL tradizionali.
 
 - Trasforma la gestione del database in un processo semplice, permettendomi di definire i miei modelli e relazioni con facilità.
 - Mi offre un sistema di tipizzazione che si integra perfettamente con TypeScript, riducendo gli errori e aumentando la sicurezza del mio codice.
 
 Grazie a Prisma, posso concentrarmi di più sulla logica del progetto e meno sulla gestione complessa del database, il che è essenziale per lo sviluppo rapido e sicuro.
 
-### TypeScript
+### Material UI
 
-### Autenticazione
+[Material UI](https://mui.com/material-ui/) è una libreria di componenti React che si basa sulle linee guida di Material Design di Google.
+
+- Fornisce componenti predefiniti e stilizzati che sono pronti all'uso e altamente personalizzabili.
+- Mi consente di costruire interfacce utente moderne e responsive senza dovermi preoccupare di dettagli CSS complessi.
+- È ben documentata e ha una comunità attiva, il che rende facile trovare soluzioni o ispirazioni quando incontro sfide di design.
+
+In particolare, Material UI mi ha aiutato a creare rapidamente interfacce professionali, risparmiando tempo nello sviluppo del design e permettendomi di concentrarmi maggiormente sulla funzionalità del sito.
+
+### NextAuth
+
+<Grid x="aside">
+  <Aside>
+    Note: per installare `npm install next-auth{:prompt}`
+  </Aside>
+</Grid>
+
+[NextAuth](https://next-auth.js.org/) è una libreria open-source per Next.js che semplifica l'implementazione dell'autenticazione nelle applicazioni web.
+
+Supporta diversi provider di autenticazione, come Google, Facebook, GitHub e molti altri, oltre ad offrire un'integrazione semplice per email e credenziali.
+
+Con NextAuth.js è possibile gestire facilmente login, logout, sessioni e autorizzazioni, rendendo più sicuro e veloce il processo di autenticazione degli utenti.
 
 ### Cloudinary
 
+<Grid x="aside">
+  <Aside>
+    Note: per installare `npm install cloudinary{:prompt}`
+  </Aside>
+</Grid>
+
+[Cloudinary](https://cloudinary.com/) è una piattaforma per la gestione di immagini e video su web e mobile. Offre strumenti per caricare, archiviare, ottimizzare e trasformare contenuti multimediali in tempo reale, migliorando le prestazioni e l’esperienza utente.
+
+Cloudinary supporta funzionalità avanzate come il ridimensionamento automatico, la compressione, il formato adattivo e la distribuzione tramite CDN, rendendolo ideale per sviluppatori e aziende che vogliono gestire contenuti visivi in modo efficiente.
+
 ### Lexical
+
+<Grid x="aside">
+  <Aside>
+    Note: per installare `npm install --save lexical @lexical/react{:prompt}`
+  </Aside>
+</Grid>
+
+[Lexical](https://lexical.dev/) è un editor di testo open-source basato su React, progettato per essere altamente estensibile, performante e accessibile. Fornisce agli sviluppatori la flessibilità di creare esperienze di editing avanzate con supporto per plugin personalizzati, gestione della selezione e rendering ottimizzato.
+
+Lexical è ideale per applicazioni che richiedono editor di testo avanzati, come CMS, piattaforme di blogging e app di collaborazione.
 
 ## Design
 
-## SEO
+Il design, in linea con le preferenze della cliente, utilizza come colore principale un verde scuro, con i font [Cormorant](https://fonts.google.com/specimen/Cormorant) e [Roboto](https://fonts.google.com/specimen/Roboto). Ho realizzato un video introduttivo e un logo in SVG per facilitare la personalizzazione CSS di colore e animazione.
+
+<Grid x="aside">
+  <Filesystem
+    size="small"
+    items={[
+      {
+        name: "theme",
+        items: [
+          {
+            name: "overrides",
+            items: [
+              {
+                name: "Components.ts",
+              },
+              {
+                name: "Typography.ts",
+              },
+            ],
+          },
+          {
+            name: "typography.ts",
+          },
+          {
+            name: "index.ts",
+          },
+        ],
+      },
+    ]}
+
+/>
+
+</Grid>
+
+Il tema di Material UI è stato costruito con un’architettura modulare, suddividendo le componenti (come Typography.ts per i testi e Components.ts per gli elementi) e unendo tutto nel file `index.ts{:ts}`. In questo modo è stato possibile esportare il tema per passarlo al `<ThemeProvider theme={theme} />{:ts}` nel file di `layout.ts{:ts}`.
+
+```ts title="./theme/index.ts"
+import { createTheme, ThemeOptions } from "@mui/material/styles";
+import typography from "./typography";
+import ComponentsOverrides from "./overrides";
+
+const themeOptions: ThemeOptions = {
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#065F46",
+    },
+    warning: {
+      main: "#C92A2A",
+    },
+  },
+  typography,
+  direction: "ltr",
+};
+
+const theme = createTheme(themeOptions);
+theme.components = ComponentsOverrides(theme);
+
+export default theme;
+```
+
+<Grid x="aside">
+  <Filesystem
+    size="small"
+    items={[
+      {
+        name: "app",
+        items: [
+          {
+            name: "(auth)",
+            items: [
+              {
+                name: "layout.tsx",
+                status: "highlighted"
+              }
+            ],
+          },
+          {
+            name: "(client)",
+            items: [
+              {
+                name: "layout.tsx",
+                status: "highlighted"
+              }
+            ],
+          },
+        ],
+      },
+    ]}
+
+/>
+
+</Grid>
+
+Per differenziare il layout dell'area utente rispetto all'accesso al CMS, ho definito due layout root distinti, eliminando il layout principale presente nella directory `./app:{:text}`.
+
+Ho quindi configurato un layout dedicato per la sezione di autenticazione e gestione utente all'interno di `/(auth)/layout.ts{:text}`, dove sono state definite tutte le componenti necessarie per la login e per le funzionalità dell'utente autenticato, evitando di caricare elementi non necessari per il client pubblico.
+
+### Animazioni
+
+Per ottenere un effetto di comparsa graduale dei vari componenti nella pagina, ho implementato un'animazione CSS e un hook di osservazione dell'intersezione, che permette di rilevare quando un elemento entra nell'area visibile. Questo approccio migliora l’esperienza visiva, rendendo il caricamento dei componenti più fluido.
+
+<Code>
+```sass title="./globals.scss"
+@keyframes compFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.componentsFadeIn {
+animation: compFadeIn 1s ease-in-out forwards;
+}
+
+````
+
+```ts title="./hooks/IntersectionObserver.tsx"
+function useIntersectionObserver<T extends HTMLElement>(className: string, options?: IntersectionObserverInit): MutableRefObject<T | null> {
+  const elementRef = useRef<T | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(className);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      options || { threshold: 0.1 },
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [className, options]);
+
+  return elementRef;
+}
+
+export default useIntersectionObserver;
+
+````
+
+```ts title="./components/molecules/Cards/CardPost/CardPost.tsx"
+const CardPost: React.FC<CardPostProps> = ({ post, logged }) => {
+  const cardRef = useIntersectionObserver<HTMLDivElement>("componentsFadeIn");
+
+  return <Card ref={cardRef}>[...]</Card>;
+};
+
+export default CardPost;
+```
+
+</Code>
+
+- Nella classe CSS `componentsFadeIn{:css}`, viene applicata un'animazione di comparsa (`compFadeIn{:css}`) con un effetto di scorrimento verso l'alto e aumento dell'opacità.
+- L'hook, `useIntersectionObserver{:ts}`, consente di monitorare quando un elemento entra nell'area visibile della pagina e di applicare la classe CSS di animazione (`componentsFadeIn{:css}`) una volta che l'elemento è visibile. Essa utilizza l'API `IntersectionObserver{:ts}` per osservare l'intersezione degli elementi con il viewport, aggiungendo la classe CSS al primo rilevamento e interrompendo poi l'osservazione per ottimizzare le prestazioni.
+- Nel componente `CardPost{:ts}`, uso l'hook `useIntersectionObserver{:ts}` per assegnare la classe CSS di animazione alla card quando entra in pagina dell'utente.
+
+Grazie a questa configurazione, i componenti come `CardPost{:ts}` si animano gradualmente quando diventano visibili, migliorando l'estetica della pagina e rendendo l'interfaccia utente più interattiva e coinvolgente.
+
+## Autenticazione
+
+L'autenticazione è implementata per permettere l’accesso solo all’account della psicoterapeuta come amministratore, grazie alla libreria NextAuth:
+
+```ts title="lib/auth.ts"
+import { AuthOptions } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { Adapter } from "next-auth/adapters";
+import prisma from "@/lib/prismadb";
+
+const adminEmail = "xxxxx@yyyy.com"; // L'email del tuo utente admin
+
+export const authOptions: AuthOptions = {
+  adapter: PrismaAdapter(prisma) as Adapter,
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
+  ],
+  secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async signIn({ user, account }) {
+      // Permetti solo l'accesso all'utente con l'email specificata
+      const { name, email } = user;
+      if (email === adminEmail) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.name = user.name;
+        token.email = user.email;
+      }
+      return token;
+    },
+    async session({ session, token, user }: any) {
+      if (token) {
+        session.user.name = token.name;
+        session.user.email = token.email;
+      }
+      return session;
+    },
+  },
+};
+```
+
+## Database
+
+Il database, costruito con [MongoDB](https://www.mongodb.com/) e Prisma, memorizza post e dati utente. L’architettura è pensata per gestire post esclusivamente creati dall’utente amministratore.
+
+```prisma title="./prisma/schema.prisma"
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String    @id @default(cuid()) @map("_id")
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  Blog          Blog[]
+}
+
+model Blog {
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  slug      String  @unique
+  title     String
+  desc      String
+  img       String?
+  imgId     String?
+  userEmail String
+  published  Boolean  @default(false)
+  topPost   Boolean  @default(false)
+  user      User     @relation(fields: [userEmail], references: [email])
+}
+
+```
+
+L'utilizzo di Prisma ha semplificato e velocizzato la gestione delle operazioni di accesso alle risorse, rendendo le operazioni **CRUD** (Create, Read, Update, Delete) più efficienti e sicure. In particolare, Prisma permette di lavorare con un'API intuitiva per il database, riducendo il rischio di errori e aumentando la produttività. Per esempio, di seguito troviamo un’implementazione delle azioni per recuperare i post del blog e ottenere i dettagli di un singolo post tramite il suo slug.
+
+```ts title="./app/(auth)/actions/blogActions.ts"
+export async function getPosts() {
+  const posts = await prisma.blog.findMany({
+    include: {
+      user: true,
+    },
+  });
+
+  return posts;
+}
+
+export async function getPost(slug: string): Promise<Blog | null> {
+  const post = await prisma.blog.findUnique({
+    where: {
+      slug: slug as string,
+    },
+  });
+
+  return post;
+}
+```
+
+Questo mi ha permesso di avere:
+
+- **Semplicità di Gestione del Database**: Prisma permette di definire facilmente le relazioni tra i modelli definiti nello `schema.prisma{:ts}`
+- **Maggiore Sicurezza**: Prisma genera automaticamente tipi TypeScript basati sullo schema del database.
+- **Performance Ottimizzata**: Con query concise e ottimizzate, Prisma riduce i tempi di accesso ai dati, migliorando le prestazioni dell'applicazione.
+- **Mantenibilità del Codice**: Le operazioni di CRUD sono facili da definire e leggere, rendendo il codice più chiaro e facile da mantenere.
+
+## Salvataggio immagini
+
+Per la gestione delle immagini, ho scelto **Cloudinary** per le sue potenti funzionalità di ottimizzazione e gestione dei contenuti visivi, che contribuiscono a migliorare la velocità di caricamento del sito e la qualità dell’esperienza utente. Cloudinary supporta trasformazioni dinamiche delle immagini, permettendomi di applicare ridimensionamenti e compressioni al momento del caricamento senza sacrificare la qualità.
+
+Nell’applicazione, ho implementato una funzione per il caricamento delle immagini che gestisce l’interazione con l'API di Cloudinary, caricando ogni immagine su un server esterno e restituendo un URL ottimizzato per il web:
+
+<Grid x="aside">
+  <Aside>
+    Note: utilizzo come immagine di prova per la copertina del post, il
+    backround del mio sito web.
+  </Aside>
+</Grid>
+
+<Img
+  src={`/psicoterapeuta-blog/new-post.webp`}
+  width={2154}
+  height={1232}
+  bleed={false}
+  alt="Sito web psicoterapeuta - nuovo post"
+></Img>
+
+Grazie a questa funzione, gli utenti possono caricare le immagini in modo rapido e sicuro. Inoltre, ogni immagine è ottimizzata automaticamente e memorizzata nella cartella specifica del progetto per una gestione ordinata dei contenuti.
+
+```ts title="./app/(auth)/actions/blogActions.ts"
+async function uploadImage(file: Blob) {
+  return new Promise<UploadApiResponse>(async (resolve, reject) => {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    v2.uploader
+      .upload_stream(
+        {
+          resource_type: "auto",
+          folder: "nomecartella",
+        },
+        (err, result) => {
+          if (err) {
+            console.err("Error image: ", err);
+            return reject(err);
+          } else if (result) {
+            return resolve(result);
+          }
+        }
+      )
+      .end(buffer);
+  });
+}
+```
+
+Dopo il salvataggio del post andato a buon fine, verrà salvato il post sul mongo e visualizzato nella pagina di dashboard con la possibilità di eliminarlo e/o modificarlo.
+
+<Img
+  src={`/psicoterapeuta-blog/actions.webp`}
+  width={2154}
+  height={1232}
+  bleed={false}
+  alt="Sito web psicoterapeuta - nuovo post"
+></Img>
+
+## Editor di Testo Avanzato
+
+Considerando che il cliente non ha una conoscenza tecnica, ho selezionato un editor di testo avanzato che consente di scrivere e formattare i post in modo semplice e intuitivo. Dopo un’attenta ricerca, ho optato per Lexical, una libreria flessibile che offre la possibilità di creare plugin personalizzati per migliorare l’esperienza utente e adattarsi alle esigenze specifiche del cliente.
+
+<Img
+  src={`/psicoterapeuta-blog/editor.webp`}
+  width={2154}
+  height={1232}
+  bleed={false}
+  alt="Sito web psicoterapeuta - editor nuovo post"
+></Img>
+
+### Funzionalità dell'Editor
+
+L'editor Lexical permette di costruire una toolbar personalizzata e aggiungere funzionalità specifiche grazie ai plugin, rendendo l'interfaccia di scrittura personalizzabile. Inoltre, il testo formattato viene salvato in `editorState{:ts}`, una variabile JSON che conserva la struttura del contenuto, rendendo la gestione dei post semplice e sicura.
+
+L'implementazione include un plugin toolbar per le principali azioni di formattazione (grassetto, corsivo, link, ecc.) e un plugin di gestione dello stato in tempo reale, che aggiorna automaticamente `editorState{:ts}` ogni volta che l'utente effettua modifiche. Di seguito, la configurazione e il codice dell’editor:
+
+```ts title="./components/core/Editor/Editor.tsx"
+const Editor = ({ name, desc }: EditorProps) => {
+  const [editorState, setEditorState] = useState<string>("");
+
+  function onChange(editorState) {
+    const editorStateJSON = editorState.toJSON();
+    setEditorState(JSON.stringify(editorStateJSON));
+  }
+
+  const editorConfig = {
+    namespace: "myEditor",
+    editorState: desc?.length > 0 ? desc : null,
+    onError(error: Error) {
+      throw error;
+    },
+    theme: Theme,
+  };
+
+  return (
+    <LexicalComposer initialConfig={editorConfig}>
+      <div className={styles["editor-container"]}>
+        <ToolbarPlugin />
+        <div className={styles["editor-inner"]}>
+          <RichTextPlugin
+            contentEditable={
+              <ContentEditable
+                className={styles["editor-input"]}
+                aria-placeholder={placeholder}
+                placeholder={
+                  <div className={styles["editor-placeholder"]}>
+                    {placeholder}
+                  </div>
+                }
+              />
+            }
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+          <HistoryPlugin />
+          <AutoFocusPlugin />
+          <OnChangePlugin onChange={onChange} />
+        </div>
+      </div>
+      <input type="hidden" value={editorState} name={name} />
+    </LexicalComposer>
+  );
+};
+export default Editor;
+```
+
+Grazie a questa soluzione, la psicoterapeuta può aggiornare i contenuti in autonomia, formattando il testo secondo le necessità e ottenendo un'interfaccia intuitiva che semplifica la gestione del blog senza la necessità di conoscere linguaggi di markup.
+
+## SEO e Sitemap
+
+Per l'ottimizzazione SEO, ho integrato robots.txt e sitemap.xml, generata dinamicamente con Next.js. Infatti NextJs permette di generare dinamicamente la sitemap per tutte le pagine del sito, garantendo che ogni nuovo articolo sia automaticamente aggiunto e indicizzato. Visitando il sito online sarà possibile vedere la sitemap generata.
+
+```xml title="sitemap.xml"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://graziadecarlo.it</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/contattami</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/grazia-decarlo</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/servizi</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/terapia-individuale</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/terapia-coppia</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/terapia-EMDR</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/sviluppo-emotivo-bambino-adolescente</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/consulenza-genitoriale</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://graziadecarlo.it/disturbi-apprendimento</loc>
+    <lastmod>2024-09-08T12:53:56.894Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+```
+
+Sono stati inseriti i principali Metadati nella intestazione come il titolo, descrizione, immagine per twitter e opengraph, keywords ,ecc...
 
 ## Vercel
 
-<div className="text-center text-4xl">completo presto... 😊</div>
+Vercel è una piattaforma di deployment e collaborazione per sviluppatori frontend integrata con GitHub, che supporta un flusso di lavoro fluido tra sviluppo e rilascio. Nel mio caso, gestisco due branch principali:
+
+- **develop**: dove continuo lo sviluppo attivo delle funzionalità del sito web, effettuando modifiche e miglioramenti in corso.
+- **main**: in cui inserisco solo versioni stabili dopo aver completato una release dal branch "develop".
+
+Seguo una numerazione del tipo "X.X.X-SNAPSHOT", dove:
+
+- Il primo numero rappresenta la major version, e viene incrementato per modifiche molto significative.
+- Il secondo è la minor version, che cambia quando vengono aggiunte nuove funzionalità.
+- Il terzo è la patch version, aggiornata per correzioni di bug o miglioramenti minori.
+- `SNAPSHOT{:text}` indica che si tratta di una versione in fase di sviluppo.
+
+Quando le modifiche passano su main, il suffisso `-SNAPSHOT{:text}` viene rimosso per indicare che la versione è stabile e pronta per la distribuzione.
