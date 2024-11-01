@@ -29,6 +29,20 @@ export async function generateMetadata({
 
   return {
     title: `${post.title} ⋅ Marco De Carlo`,
+    description: post?.description,
+    openGraph: {
+      title: `${post.title} ⋅ Marco De Carlo`,
+      description: post?.description,
+      url: url,
+      siteName: "Marco De Carlo",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} ⋅ Marco De Carlo`,
+      description: post?.description,
+      creator: "@marco_dec",
+    },
     alternates: { canonical: url },
   };
 }
