@@ -54,7 +54,14 @@ export const  myMeta : Metadata = {
       description:
         "Marco De Carlo, Web Developer esperto in siti web personalizzati per aziende e professionisti.",
       creator: "@marco_dec",
-      images: ["/marco_decarlo.png"],
+      images: [
+        {
+          url: "/marco_decarlo.png",
+          width: 300,
+          height: 200,
+          alt: "Marco De Carlo - Web Developer",
+        },
+      ],
     },
     alternates: { canonical: "https://marcodecarlo.com" },
   };
