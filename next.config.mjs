@@ -1,6 +1,10 @@
-import  { withContentlayer } from 'next-contentlayer';
+import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = { swcMinify: true }
+const nextConfig = {
+  pageExtensions: ["md", "mdx", "ts", "tsx"],
+};
 
-export default withContentlayer(nextConfig);
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);
