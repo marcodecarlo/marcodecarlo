@@ -5,14 +5,14 @@ import styles from "./Anchor.module.scss";
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 
 const Anchor = ({ href, children, ...props }: AnchorProps) => {
-  if (href?.startsWith('/')) {
+  if (href?.startsWith("/")) {
     return (
-      <Link href={href} className={styles["link"]} {...props}>
+      <Link href={href} className={styles["link-next"]} {...props}>
         {children}
       </Link>
     );
   }
-  if (href?.startsWith('#')) {
+  if (href?.startsWith("#")) {
     return (
       <a href={href} className={styles["link"]} {...props}>
         {children}
@@ -30,9 +30,6 @@ const Anchor = ({ href, children, ...props }: AnchorProps) => {
       {children}
     </a>
   );
-  }
-
-  return <Link href={href} className={styles["link-next"]} {...props} />;
 };
 
 export default Anchor;
