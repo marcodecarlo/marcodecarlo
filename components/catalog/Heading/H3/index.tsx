@@ -1,7 +1,8 @@
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./H3.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const H3 = (props: any) => {
+type HeadingProps = ComponentPropsWithoutRef<"h3">;
+const H3 = (props: HeadingProps) => {
   return <h3 className={styles["title"]} {...props} />;
 };
 

@@ -1,7 +1,9 @@
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./Blockquote.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Blockquote = (props: any) => {
+type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
+
+const Blockquote = (props: BlockquoteProps) => {
   return <blockquote className={styles["wrapper"]} {...props} />;
 };
 
