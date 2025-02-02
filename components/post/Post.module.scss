@@ -1,0 +1,10 @@
+.header {
+  @apply mt-24 mb-4 xl:!col-end-5;
+
+  .title {
+    @apply mt-6 text-2xl font-medium sm:text-4xl;
+  }
+  .info {
+    @apply mt-4 flex space-x-2 text-green-200/50;
+  }
+}

@@ -1,25 +1,24 @@
-import { FormattedPost } from "@/lib";
+import { Heading } from "@/lib/types";
 
-const PostTableOfContents = ({
-  headings,
-}: {
-  headings: NonNullable<FormattedPost["headings"]>;
-}) => {
+interface PostTableOfContentsProps {
+  headers: Heading[];
+}
+const PostTableOfContents = ({ headers }: PostTableOfContentsProps) => {
   return (
     <div>
       <div className="mb-2.5 text-xs uppercase text-green-200/30">Indice</div>
 
       <ul className="space-y-2.5 text-sm">
-        {headings.map((heading) => {
+        {headers.map((header) => {
           return (
-            <li key={heading.slug}>
+            <li key={header.slug}>
               <a
-                href={`#${heading.slug}`}
+                href={`#${header.slug}`}
                 className={`block text-green-200/50 underline-offset-2 transition-all hover:text-green-100 hover:underline hover:decoration-green-200/50 ${
-                  heading.heading === 2 ? "pl-3" : ""
-                } ${heading.heading === 3 ? "pl-6" : ""}`}
+                  header.heading === 2 ? "pl-3" : ""
+                } ${header.heading === 3 ? "pl-6" : ""}`}
               >
-                {heading.text}
+                {header.text}
               </a>
             </li>
           );
