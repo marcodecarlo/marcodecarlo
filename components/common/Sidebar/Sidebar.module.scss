@@ -1,0 +1,6 @@
+.container {
+  @apply sticky top-6 hidden h-0 xl:!col-start-4 xl:row-start-3 xl:block;
+  .content {
+    @apply space-y-6;
+  }
+}
