@@ -18,7 +18,7 @@ import {
   Strong,
 } from "@/components";
 
-export const components = {
+const MDXComponents = {
   Code,
   Filesystem,
   Grid,
@@ -37,3 +37,5 @@ export const components = {
   blockquote: Blockquote,
   del: Deleted,
 };
+
+export default MDXComponents;
