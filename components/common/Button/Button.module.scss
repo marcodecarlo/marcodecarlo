@@ -1,0 +1,32 @@
+.btn {
+  @apply inline-flex items-center space-x-2 transition;
+
+  .container-icon {
+    @apply transition rounded-full bg-green-200/10 p-1 text-green-200/80;
+    .icon {
+      @apply w-4;
+    }
+  }
+
+  .label {
+    @apply text-green-200/70;
+  }
+
+  &:hover {
+    .container-icon {
+      @apply bg-green-200/25 text-green-200;
+
+      .icon {
+        @apply scale-125;
+      }
+    }
+
+    .label {
+      @apply text-green-200/90;
+    }
+  }
+
+  :active .container-icon .icon {
+    @apply scale-110;
+  }
+}
