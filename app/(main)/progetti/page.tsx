@@ -3,7 +3,9 @@ import { getAllProjects } from "@/lib/projects";
 import { PostPreview } from "@/components";
 
 export default async function Page() {
-  const posts = (await getAllProjects())
+  const projects = await getAllProjects();
+
+  const publishedProjects = projects
     .filter((p) => p.meta.status === "published")
     .sort(
       (a, b) =>
@@ -11,13 +13,13 @@ export default async function Page() {
         Number(new Date(a.meta.publishedAt))
     );
 
-  if (!posts) {
+  if (!publishedProjects) {
     notFound();
   }
 
   return (
     <div className="mt-8 space-y-10">
-      {posts.map((post) => {
+      {publishedProjects.map((post) => {
         return <PostPreview key={post.meta.slug} meta={post.meta} />;
       })}
     </div>

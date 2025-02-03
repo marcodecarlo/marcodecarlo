@@ -14,4 +14,4 @@ export { default as MDXComponents } from "./mdx";
 export type { Project, ProjectMeta, Heading } from "./types";
 
 // Utility
-export { formatShortDate, createSlug, parseMDX } from "./utility";
+export { formatShortDate, createSlug, parseMDX, generateMeta } from "./utility";
