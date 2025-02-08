@@ -1,17 +1,8 @@
 "use client";
-import { CSSProperties, useMemo } from "react";
+import { CSSProperties } from "react";
 import styles from "./PrideFlag.module.scss";
 
 const PrideFlag = () => {
-  const isJune = useMemo(() => {
-    const currentDate = new Date();
-    return currentDate.getMonth() === 5;
-  }, []);
-
-  if (!isJune) {
-    return null;
-  }
-
   const colors = [
     "hsl(0deg 0% 18%)",
     "hsl(30deg 60% 30%)",
