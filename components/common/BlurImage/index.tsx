@@ -15,7 +15,7 @@ const BlurImage = (props: ImageProps) => {
         className={`${styles["image"]} ${
           isLoading ? styles["loading"] : styles["no-loading"]
         }`}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
       />
     </div>
   );
