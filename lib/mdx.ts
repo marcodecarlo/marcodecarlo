@@ -1,6 +1,5 @@
 import {
   Aside,
-  Code,
   Filesystem,
   Grid,
   H1,
@@ -19,7 +18,6 @@ import {
 } from "@/components";
 
 const MDXComponents = {
-  Code,
   Filesystem,
   Grid,
   Aside,
