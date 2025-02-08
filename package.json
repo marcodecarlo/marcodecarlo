@@ -1,7 +1,13 @@
 {
   "name": "marcodecarlo",
+  "description": "Personal Website",
   "version": "0.5.0-SNAPSHOT",
-  "private": true,
+  "author": "Marco De Carlo <marcodecarlo.developer@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcodecarlo/marcodecarlo"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
