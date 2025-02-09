@@ -1,7 +1,8 @@
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./Horizontal.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Horizontal = (props: any) => {
+type HorizontalProps = ComponentPropsWithoutRef<"hr">;
+const Horizontal = (props: HorizontalProps) => {
   return <hr className={styles["wrapper"]} {...props} />;
 };
 

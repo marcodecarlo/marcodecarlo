@@ -1,7 +1,8 @@
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./Unordered.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Unordered = (props: any) => {
+type ListProps = ComponentPropsWithoutRef<"ul">;
+const Unordered = (props: ListProps) => {
   return <ul className={styles["wrapper"]} {...props} />;
 };
 

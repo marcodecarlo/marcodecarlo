@@ -1,7 +1,7 @@
+@use "code.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "code.scss";
 
 @layer base {
   .btn-primary{

@@ -1,23 +1,24 @@
-import { formatPostPreview } from "@/lib";
 import { ContentLink } from "@/components";
+import { formatShortDate, ProjectMeta } from "@/lib";
 
-export default function PostPreview(
-  post: ReturnType<typeof formatPostPreview>
-) {
+interface PostPreviewProps {
+  meta: ProjectMeta;
+}
+export default function PostPreview({ meta }: PostPreviewProps) {
   return (
     <ContentLink
-      key={post.slug}
-      href={`/progetti/${post.slug}`}
+      key={meta.slug}
+      href={`/progetti/${meta.slug}`}
       className="animate-fadeIn"
     >
-      <ContentLink.Title>{post.title}</ContentLink.Title>
+      <ContentLink.Title>{meta.title}</ContentLink.Title>
 
       <ContentLink.Meta>
-        <div>{post.publishedAtFormatted}</div>
+        <div>{formatShortDate(meta.publishedAt)}</div>
       </ContentLink.Meta>
 
-      {post.description ? (
-        <ContentLink.Text>{post.description}</ContentLink.Text>
+      {meta.description ? (
+        <ContentLink.Text>{meta.description}</ContentLink.Text>
       ) : null}
     </ContentLink>
   );

@@ -1,14 +1,8 @@
+"use client";
+import { CSSProperties } from "react";
 import styles from "./PrideFlag.module.scss";
 
 const PrideFlag = () => {
-  const currentDate = new Date();
-
-  const isJune = currentDate.getMonth() === 5;
-
-  if (!isJune) {
-    return null;
-  }
-
   const colors = [
     "hsl(0deg 0% 18%)",
     "hsl(30deg 60% 30%)",
@@ -21,7 +15,7 @@ const PrideFlag = () => {
   ];
 
   return (
-    <div className={styles.flag}>
+    <div className={styles.flag} title="Pride Month">
       {Array.from({ length: 10 }).map((item, index) => (
         <div
           key={index}
@@ -31,7 +25,7 @@ const PrideFlag = () => {
               "--billow": index + "px",
               background: generateGradientString(colors),
               animationDelay: `${index * 36}ms`,
-            } as React.CSSProperties
+            } as CSSProperties
           }
         />
       ))}

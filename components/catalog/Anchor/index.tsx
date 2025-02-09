@@ -1,20 +1,35 @@
+import { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import styles from "./Anchor.module.scss";
 
-const Anchor = ({ href = "", ...props }) => {
-  if (href.startsWith("http")) {
+type AnchorProps = ComponentPropsWithoutRef<"a">;
+
+const Anchor = ({ href, children, ...props }: AnchorProps) => {
+  if (href?.startsWith("/")) {
     return (
-      <a
-        className={styles["link"]}
-        href={href}
-        target="_blank"
-        rel="noopener"
-        {...props}
-      />
+      <Link href={href} className={styles["link-next"]} {...props}>
+        {children}
+      </Link>
     );
   }
-
-  return <Link href={href} className={styles["link-next"]} {...props} />;
+  if (href?.startsWith("#")) {
+    return (
+      <a href={href} className={styles["link"]} {...props}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles["link"]}
+      {...props}
+    >
+      {children}
+    </a>
+  );
 };
 
 export default Anchor;

@@ -1,6 +1,5 @@
 "use client";
-import type { ImageProps } from "next/image";
-import NextImage from "next/image";
+import NextImage, { type ImageProps } from "next/image";
 import { useState } from "react";
 import styles from "./BlurImage.module.scss";
 
@@ -16,7 +15,7 @@ const BlurImage = (props: ImageProps) => {
         className={`${styles["image"]} ${
           isLoading ? styles["loading"] : styles["no-loading"]
         }`}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
       />
     </div>
   );

@@ -64,20 +64,19 @@ Grazie a Next.js, posso sviluppare applicazioni più efficaci e scalabili, che s
 
 La tipizzazione dei post è definita in un file schema dedicato, e il percorso dei file è configurato per accedere direttamente ai file .mdx.
 
-<Code>
 ```ts title="./content/definitions/Post.ts" {5}
 import { defineDocumentType } from "contentlayer/source-files";
 
 const Post = defineDocumentType(() => ({
-name: "Post",
-filePathPattern: "posts/\*.mdx",
-contentType: "mdx",
-fields: {
-title: { type: "string", required: true },
-publishedAt: { type: "string", required: true },
-description: { type: "string" },
-status: { type: "enum", options: ["draft", "published"], required: true },
-},
+  name: "Post",
+  filePathPattern: "posts/*.mdx",
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    description: { type: "string" },
+    status: { type: "enum", options: ["draft", "published"], required: true },
+  },
 }));
 
 export default Post;
@@ -90,8 +89,6 @@ export default makeSource({
     ...
 });
 ```
-
-</Code>
 
 Nel percorso definito da `contentDirPath{:js}` + `filePathPattern{:js}` = `/content/posts{:text}` possiamo trovare tutti i file in formato .mdx che vanno a descrivere i diversi progetti presenti nel sito web.
 
@@ -278,23 +275,19 @@ Ogni componente ha un proprio file di stile **.module.scss** per una maggiore le
 
 Per l'ottimizzazione SEO, ho integrato robots.txt e sitemap.xml, generata dinamicamente con Next.js. infatti NextJs permette di generare dinamicamente la sitemap per tutte le pagine del sito, garantendo che ogni nuovo progetto sia automaticamente aggiunto e indicizzato. Ogni pagina dei progetti è stata inserita nella sitemap, così quando si effettua la build viene generata in modo autoomatico. Visitando il sito online sarà possibile vedere la sitemap generata.
 
-<Code>
 ```ts title="./app/(main)/progetti/sitemap.ts"
-import { allPosts } from '@/.contentlayer/generated';
-import type { MetadataRoute } from 'next';
+import { allPosts } from "@/.contentlayer/generated";
+import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-const posts = await allPosts
-.filter((p) => p.status === "published")
+  const posts = await allPosts.filter((p) => p.status === "published");
 
-    return posts.map((p) => ({
-      url: `https://marcodecarlo.com/progetti/${p.slug}`,
-      lastModified: new Date(p.publishedAt),
-    }))
-
+  return posts.map((p) => ({
+    url: `https://marcodecarlo.com/progetti/${p.slug}`,
+    lastModified: new Date(p.publishedAt),
+  }));
 }
-
-````
+```
 
 ```xml title="sitemap.xml"
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -323,9 +316,7 @@ const posts = await allPosts
     <lastmod>2024-09-01T00:00:00.000Z</lastmod>
   </url>
 </urlset>
-````
-
-</Code>
+```
 
 Grazie all'uso di `generateMetadata(){:ts}` vengono generati dinamicamente i metadati delle pagine. Viene così personalizzato il titolo per ogni pagina e l'url canonico che è utile a livello SEO perchè aiuta i moti di ricerca a capire quale versione di una pagina è considerata quella principale, evitando così errori di **contenuti duplicati**.
 

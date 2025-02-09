@@ -1,13 +1,14 @@
-import { allPosts } from '@/.contentlayer/generated';
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+import { getAllProjects } from "@/lib/projects";
 
-   
-  export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const posts = await allPosts
-    .filter((p) => p.status === "published")
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const projects = await getAllProjects();
+  const publishedProjects = projects.filter(
+    (p) => p.meta.status === "published"
+  );
 
-    return posts.map((p) => ({
-      url: `https://marcodecarlo.com/progetti/${p.slug}`,
-      lastModified: new Date(p.publishedAt),
-    }))
-  }
+  return publishedProjects.map(({ meta }) => ({
+    url: `https://marcodecarlo.com/progetti/${meta.slug}`,
+    lastModified: new Date(meta.publishedAt),
+  }));
+}

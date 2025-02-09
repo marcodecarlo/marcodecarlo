@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Header } from "@/components";
 
 export default function NotFound() {
@@ -7,12 +8,12 @@ export default function NotFound() {
       <p className="text-center text-2xl">Non ho trovato nulla!</p>
 
       <div className="text-center mt-6">
-        <a
+        <Link
           className="rounded-lg px-4 py-1 border border-green-800 hover:border-green-600 align-middle"
           href="/"
         >
           Torna alla Home
-        </a>
+        </Link>
       </div>
     </div>
   );

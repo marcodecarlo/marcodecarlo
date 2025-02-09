@@ -209,7 +209,6 @@ Ho quindi configurato un layout dedicato per la sezione di autenticazione e gest
 
 Per ottenere un effetto di comparsa graduale dei vari componenti nella pagina, ho implementato un'animazione CSS e un hook di osservazione dell'intersezione, che permette di rilevare quando un elemento entra nell'area visibile. Questo approccio migliora l’esperienza visiva, rendendo il caricamento dei componenti più fluido.
 
-<Code>
 ```sass title="./globals.scss"
 @keyframes compFadeIn {
   from {
@@ -226,24 +225,24 @@ Per ottenere un effetto di comparsa graduale dei vari componenti nella pagina, h
 animation: compFadeIn 1s ease-in-out forwards;
 }
 
-````
+```
 
 ```ts title="./hooks/IntersectionObserver.tsx"
-function useIntersectionObserver<T extends HTMLElement>(className: string, options?: IntersectionObserverInit): MutableRefObject<T | null> {
+function useIntersectionObserver<T extends HTMLElement>(
+  className: string,
+  options?: IntersectionObserverInit
+): MutableRefObject<T | null> {
   const elementRef = useRef<T | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(className);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      options || { threshold: 0.1 },
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(className);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options || { threshold: 0.1 });
 
     if (elementRef.current) {
       observer.observe(elementRef.current);
@@ -260,8 +259,7 @@ function useIntersectionObserver<T extends HTMLElement>(className: string, optio
 }
 
 export default useIntersectionObserver;
-
-````
+```
 
 ```ts title="./components/molecules/Cards/CardPost/CardPost.tsx"
 const CardPost: React.FC<CardPostProps> = ({ post, logged }) => {
@@ -272,8 +270,6 @@ const CardPost: React.FC<CardPostProps> = ({ post, logged }) => {
 
 export default CardPost;
 ```
-
-</Code>
 
 - Nella classe CSS `componentsFadeIn{:css}`, viene applicata un'animazione di comparsa (`compFadeIn{:css}`) con un effetto di scorrimento verso l'alto e aumento dell'opacità.
 - L'hook, `useIntersectionObserver{:ts}`, consente di monitorare quando un elemento entra nell'area visibile della pagina e di applicare la classe CSS di animazione (`componentsFadeIn{:css}`) una volta che l'elemento è visibile. Essa utilizza l'API `IntersectionObserver{:ts}` per osservare l'intersezione degli elementi con il viewport, aggiungendo la classe CSS al primo rilevamento e interrompendo poi l'osservazione per ottimizzare le prestazioni.

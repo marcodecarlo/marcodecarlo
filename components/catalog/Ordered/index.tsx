@@ -1,7 +1,8 @@
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./Ordered.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Ordered = (props: any) => {
+type OrderedProps = ComponentPropsWithoutRef<"ol">;
+const Ordered = (props: OrderedProps) => {
   return <ol className={styles["wrapper"]} {...props} />;
 };
 
