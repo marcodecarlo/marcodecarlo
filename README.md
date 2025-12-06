@@ -1,7 +1,7 @@
 ### Hi there 👋 I'm Marco
 
 <p align="center">
-  <img src="https://res.cloudinary.com/graziadecarlo/image/upload/v1726668993/logo-marco.png" alt="Logo">
+  <img src="https://res.cloudinary.com/massets/image/upload/v1726668993/logo-marco.png" alt="Logo">
 </p>
 
 <p align="center">
